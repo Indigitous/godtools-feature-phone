@@ -9,26 +9,15 @@ import javax.microedition.lcdui.Image;
 public class menu extends Canvas {
 
     Midlet main;
-    //form form;
     Image back;
     Image choose;
     int mychoice = 0;
 
-    // 0 = display mode
-    // 1 = quiz mode
     public menu(Midlet m) {
         main = m;
         setFullScreenMode(true);
-        //loadimage();
     }
-    /*public final void loadimage(){
-     try {
-     back = Image.createImage("/image/menuback.jpg");
-     choose = Image.createImage("/image/selector.jpg");
-     } catch (IOException ex) {
-     ex.printStackTrace();
-     }
-     }*/
+
     protected void paint(Graphics g) {
         int iViewH = this.getHeight();
         int iViewW = this.getWidth();

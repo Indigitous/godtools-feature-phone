@@ -18,7 +18,6 @@ public final class fourLaws extends Canvas {
     int wrapWidth;
     private int button;
     private boolean button1, button2, button3;
-   
     private MyParser mypar = new MyParser("Assests/fourlaw/en/01_Home.xml");
     private MyParser mypar2 = new MyParser("Assests/fourlaw/en/FirstPoint.xml");
     private MyParser mypar3 = new MyParser("Assests/fourlaw/en/03_SecondPoint.xml");
@@ -30,7 +29,6 @@ public final class fourLaws extends Canvas {
     private MyParser mypar9 = new MyParser("Assests/fourlaw/en/09_EithPoint.xml");
     private MyParser mypar10 = new MyParser("Assests/fourlaw/en/10_NinethPoint.xml");
     private MyParser mypar11 = new MyParser("Assests/fourlaw/en/11_TenthPoint.xml");
-    
     private int pages = 1;
     int titleWidth = 10;
     int titleHight = 12;
@@ -69,9 +67,6 @@ public final class fourLaws extends Canvas {
         fontSmall = Font.getFont(Font.FACE_SYSTEM, Font.STYLE_PLAIN, Font.SIZE_SMALL);
         fontMedium = Font.getFont(Font.FACE_PROPORTIONAL, Font.STYLE_PLAIN, Font.SIZE_MEDIUM);
         fontLarge = Font.getFont(Font.FACE_PROPORTIONAL, Font.STYLE_BOLD, Font.SIZE_LARGE);
-
-
-
     }
 
     protected void paint(Graphics g) {
@@ -114,8 +109,8 @@ public final class fourLaws extends Canvas {
             e2.writeTo(g, 0, bodyHeight, fontMedium);
             g.setFont(fontMedium);
         }
-        /// fourLawod one is done here
-        /// welcome to fourLawod two
+        // Law one is done here
+        // welcome to law two
         if (pages == 2) {
 
             LineEnumeration e = new LineEnumeration(fontLarge, " " + mypar2.getNumber(), getWidth());
@@ -234,11 +229,8 @@ public final class fourLaws extends Canvas {
             g.setFont(fontMedium);
 
         }
-      
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        ///////////////////////////page4//////////////////////////////////////////////////////////////////////
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+        //page4
         if (pages == 4) {
 
             LineEnumeration e = new LineEnumeration(fontLarge, " " + mypar4.getNumber(), getWidth());
@@ -306,7 +298,7 @@ public final class fourLaws extends Canvas {
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////7/
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-       
+
         if (pages == 5) {
             LineEnumeration e = new LineEnumeration(fontLarge, " " + mypar5.getNumber(), getWidth());
             e.writeTo(g, 0, titleHight, fontLarge);
@@ -324,12 +316,12 @@ public final class fourLaws extends Canvas {
                 g.setColor(200, 255, 0);
                 g.fillRect(0, 220, getWidth() - 15, 20);
             }
-            
+
             if (button == 2) {
                 g.setColor(200, 255, 0);
                 g.fillRect(0, 250, getWidth() - 15, 20);
             }
-                        
+
             g.drawImage(down, getWidth() - 30, 190, Graphics.LEFT | Graphics.TOP);
             g.drawImage(down, getWidth() - 30, 220, Graphics.LEFT | Graphics.TOP);
             g.drawImage(down, getWidth() - 30, 250, Graphics.LEFT | Graphics.TOP);
@@ -427,7 +419,7 @@ public final class fourLaws extends Canvas {
                 e = new LineEnumeration(fontMedium, mypar5.getPanelText5(), getWidth());
                 e.writeTo(g, 5, 52, fontMedium);
 
-                                
+
 
 
             }
@@ -464,7 +456,7 @@ public final class fourLaws extends Canvas {
             g.drawImage(down, getWidth() - 30, 90, Graphics.LEFT | Graphics.TOP);
             g.drawImage(down, getWidth() - 30, 198, Graphics.LEFT | Graphics.TOP);
 
-//draw Break Lines
+            //draw Break Lines
             g.setColor(0, 0, 0);
 
             g.drawLine(0, 85, getWidth(), 85);
@@ -474,23 +466,15 @@ public final class fourLaws extends Canvas {
             g.drawString(mypar6.getPanelButton1(), 25, 90, Graphics.LEFT | Graphics.TOP);
             g.drawString(mypar6.getPanelButton2(), 25, 198, Graphics.LEFT | Graphics.TOP);
 
-
-
-
             if (button1 == true) {
 
                 g.drawImage(selfy, 0, 90, Graphics.LEFT | Graphics.TOP);
 
             } else if (button2 == true) {
-
                 g.drawImage(christian, 0, 18, Graphics.LEFT | Graphics.TOP);
-
-
-
             }
-
-
         }
+
         if (pages == 8) {
             LineEnumeration e = new LineEnumeration(fontLarge, " " + mypar7.getHeading(), getWidth());
 
@@ -501,31 +485,24 @@ public final class fourLaws extends Canvas {
             if (button == 0) {
                 g.setColor(200, 255, 0);
                 g.fillRect(0, 90, getWidth() - 15, 20);
-
-
             }
 
             if (button == 1) {
                 g.setColor(200, 255, 0);
-
                 g.fillRect(0, 198, getWidth() - 15, 20);
-
             }
             //draw down images   
             g.drawImage(down, getWidth() - 30, 90, Graphics.LEFT | Graphics.TOP);
             g.drawImage(down, getWidth() - 30, 198, Graphics.LEFT | Graphics.TOP);
 
-//draw Break Lines
+            //draw Break Lines
             g.setColor(0, 0, 0);
-
             g.drawLine(0, 85, getWidth(), 85);
             g.drawLine(0, 222, getWidth(), 222);
 
             //draw Buttons
             g.drawString(mypar7.getPanelButton1(), 25, 90, Graphics.LEFT | Graphics.TOP);
             g.drawString(mypar7.getPanelButton2(), 25, 198, Graphics.LEFT | Graphics.TOP);
-
-
 
 
             if (button1 == true) {
@@ -543,15 +520,10 @@ public final class fourLaws extends Canvas {
                 e = new LineEnumeration(fontMedium, mypar7.getPanelText2(), getWidth());
                 e.writeTo(g, 5, 110, fontMedium);
 
-
-
-
             }
 
             e = new LineEnumeration(fontLarge, " " + mypar7.getQuestions(), getWidth());
-
             e.writeTo(g, 18, 270, fontMedium);
-
             g.setFont(fontMedium);
 
         }
@@ -570,9 +542,6 @@ public final class fourLaws extends Canvas {
             if (button == 1) {
                 g.setColor(200, 255, 0);
                 g.fillRect(0, 220, getWidth() - 15, 20);
-
-
-
             }
             if (button == 2) {
                 g.setColor(200, 255, 0);
@@ -599,10 +568,6 @@ public final class fourLaws extends Canvas {
                 g.setColor(0, 0, 0);
                 e = new LineEnumeration(fontMedium, mypar8.getPanelText1(), getWidth());
                 e.writeTo(g, 5, 117, fontMedium);
-
-
-
-
             }
             if (button2 == true) {
                 g.setColor(200, 255, 0);
@@ -611,14 +576,9 @@ public final class fourLaws extends Canvas {
                 g.setColor(0, 0, 0);
                 e = new LineEnumeration(fontMedium, mypar8.getPanelText2(), getWidth());
                 e.writeTo(g, 5, 9, fontMedium);
-
-
-
             }
             if (button3 == true) {
-
                 g.drawImage(trust, 0, 10, Graphics.LEFT | Graphics.TOP);
-
             }
         }
 
@@ -633,14 +593,10 @@ public final class fourLaws extends Canvas {
             if (button == 0) {
                 g.setColor(200, 255, 0);
                 g.fillRect(0, 190, getWidth() - 15, 20);
-
             }
             if (button == 1) {
                 g.setColor(200, 255, 0);
                 g.fillRect(0, 220, getWidth() - 15, 20);
-
-
-
             }
             if (button == 2) {
                 g.setColor(200, 255, 0);
@@ -667,8 +623,6 @@ public final class fourLaws extends Canvas {
                 g.setColor(0, 0, 0);
                 e = new LineEnumeration(fontMedium, mypar9.getPanelText1(), getWidth());
                 e.writeTo(g, 5, 218, fontMedium);
-
-
                 g.drawImage(up, getWidth() - 30, 190, Graphics.LEFT | Graphics.TOP);
 
             }
@@ -679,8 +633,6 @@ public final class fourLaws extends Canvas {
                 g.setColor(0, 0, 0);
                 e = new LineEnumeration(fontMedium, mypar9.getPanelText2(), getWidth());
                 e.writeTo(g, 5, 248, fontMedium);
-
-
                 g.drawImage(up, getWidth() - 30, 220, Graphics.LEFT | Graphics.TOP);
 
             }
@@ -690,9 +642,7 @@ public final class fourLaws extends Canvas {
                 g.setColor(0, 0, 0);
                 e = new LineEnumeration(fontMedium, mypar9.getPanelText3(), getWidth());
                 e.writeTo(g, 5, 278, fontMedium);
-
             }
-
         }
         if (pages == 11) {
 
@@ -892,7 +842,7 @@ public final class fourLaws extends Canvas {
 
             }
         }
-        
+
         if (pages == 14) {
 
             LineEnumeration e = new LineEnumeration(fontLarge, " " + mypar11.getHeading(), getWidth());
@@ -970,13 +920,6 @@ public final class fourLaws extends Canvas {
 
         }
 
-
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////7/
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     }
 
     static Font getFont(int face, int style, int size) {
@@ -1052,7 +995,6 @@ public final class fourLaws extends Canvas {
             //midlet.notifyDestroyed();
             Display.getDisplay(midlet).setCurrent(midlet.myMenu); // back to menu
         }
-
         repaint();
     }
 }

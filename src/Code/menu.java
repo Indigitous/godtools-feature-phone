@@ -17,7 +17,7 @@ public class menu extends Canvas {
         main = m;
         setFullScreenMode(true);
     }
-    
+
     protected void paint(Graphics g) {
         int iViewH = this.getHeight();
         int iViewW = this.getWidth();

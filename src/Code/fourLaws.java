@@ -18,7 +18,6 @@ public final class fourLaws extends Canvas {
     int wrapWidth;
     private int button;
     private boolean button1, button2, button3;
-   
     private MyParser mypar = new MyParser("Assests/fourlaw/en/01_Home.xml");
     private MyParser mypar2 = new MyParser("Assests/fourlaw/en/FirstPoint.xml");
     private MyParser mypar3 = new MyParser("Assests/fourlaw/en/03_SecondPoint.xml");
@@ -30,7 +29,6 @@ public final class fourLaws extends Canvas {
     private MyParser mypar9 = new MyParser("Assests/fourlaw/en/09_EithPoint.xml");
     private MyParser mypar10 = new MyParser("Assests/fourlaw/en/10_NinethPoint.xml");
     private MyParser mypar11 = new MyParser("Assests/fourlaw/en/11_TenthPoint.xml");
-    
     private int pages = 1;
     int titleWidth = 10;
     int titleHight = 12;
@@ -231,7 +229,7 @@ public final class fourLaws extends Canvas {
             g.setFont(fontMedium);
 
         }
-      
+
         //page4
         if (pages == 4) {
 
@@ -300,7 +298,7 @@ public final class fourLaws extends Canvas {
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////7/
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-       
+
         if (pages == 5) {
             LineEnumeration e = new LineEnumeration(fontLarge, " " + mypar5.getNumber(), getWidth());
             e.writeTo(g, 0, titleHight, fontLarge);
@@ -318,12 +316,12 @@ public final class fourLaws extends Canvas {
                 g.setColor(200, 255, 0);
                 g.fillRect(0, 220, getWidth() - 15, 20);
             }
-            
+
             if (button == 2) {
                 g.setColor(200, 255, 0);
                 g.fillRect(0, 250, getWidth() - 15, 20);
             }
-                        
+
             g.drawImage(down, getWidth() - 30, 190, Graphics.LEFT | Graphics.TOP);
             g.drawImage(down, getWidth() - 30, 220, Graphics.LEFT | Graphics.TOP);
             g.drawImage(down, getWidth() - 30, 250, Graphics.LEFT | Graphics.TOP);
@@ -421,7 +419,7 @@ public final class fourLaws extends Canvas {
                 e = new LineEnumeration(fontMedium, mypar5.getPanelText5(), getWidth());
                 e.writeTo(g, 5, 52, fontMedium);
 
-                                
+
 
 
             }
@@ -476,7 +474,7 @@ public final class fourLaws extends Canvas {
                 g.drawImage(christian, 0, 18, Graphics.LEFT | Graphics.TOP);
             }
         }
-       
+
         if (pages == 8) {
             LineEnumeration e = new LineEnumeration(fontLarge, " " + mypar7.getHeading(), getWidth());
 
@@ -844,7 +842,7 @@ public final class fourLaws extends Canvas {
 
             }
         }
-        
+
         if (pages == 14) {
 
             LineEnumeration e = new LineEnumeration(fontLarge, " " + mypar11.getHeading(), getWidth());
@@ -921,7 +919,7 @@ public final class fourLaws extends Canvas {
             }
 
         }
-         
+
     }
 
     static Font getFont(int face, int style, int size) {
