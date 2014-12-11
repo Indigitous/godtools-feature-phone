@@ -316,7 +316,7 @@ public class MyParser {
 			try {
                         
                             InputStream file = getClass().getResourceAsStream(path);
-                        saxParser.parse(file, MyHandler);
+                            saxParser.parse(file, MyHandler);
                         } catch (Exception e) {
                         }
                         
@@ -405,7 +405,6 @@ public class MyParser {
 			}else {
 				str = str+panelimages3.charAt(i);
 			}
-			
 		}
 		return str;
 	}
@@ -467,7 +466,7 @@ public class MyParser {
 			}else {
 				str = str+panelimages6.charAt(i);
 			}
-			
+		                                              
 		}
 		return str;
 	}

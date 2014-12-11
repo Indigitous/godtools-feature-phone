@@ -7,11 +7,11 @@ import javax.microedition.midlet.*;
 
 public class Midlet extends MIDlet {
     Display d;
-    knowGod knowingGodPersonaly;
-    satisfied satisfiedbyG;
-    connectingGod connectingwithG;
-    fourLaw fourL;
-    everyStudent eStudent;
+   // knowGod knowingGodPersonaly;
+    //satisfied satisfiedbyG;
+   // connectingGod connectingwithG;
+    fourLaws fourL;
+    //everyStudent eStudent;
 
     Splash mysplashscreen = new Splash(this);
     menu myMenu;
@@ -20,9 +20,7 @@ public class Midlet extends MIDlet {
     public static final int BLUE = 0x0000FF;
     public static final int LIGHT_GRAY = 0xAAAAAA;
     public static final int DARK_GRAY = 0x555555;
-    //quizClass myquizclass;
-    //form form;
-    
+   
     public Midlet()
     {
         
@@ -30,17 +28,17 @@ public class Midlet extends MIDlet {
     
     public void startApp() {
         
-        knowingGodPersonaly = new knowGod(this);
-        knowingGodPersonaly.repaint();
-        satisfiedbyG = new satisfied(this);
-        satisfiedbyG.repaint();
-        connectingwithG = new connectingGod(this);
-        connectingwithG.repaint();
-        fourL = new fourLaw(this);
+        //knowingGodPersonaly = new knowGod(this);
+       // knowingGodPersonaly.repaint();
+        //satisfiedbyG = new satisfied(this);
+       // satisfiedbyG.repaint();
+       // connectingwithG = new connectingGod(this);
+        //connectingwithG.repaint();
+        fourL = new fourLaws(this);
         fourL.repaint();
-        eStudent = new everyStudent(this);
-        eStudent.repaint();
-        //myquizclass = new quizClass(this);
+       // eStudent = new everyStudent(this);
+        //eStudent.repaint();
+       
         myMenu = new menu(this);
         d=Display.getDisplay(this);
         d.setCurrent(mysplashscreen);

@@ -24,8 +24,7 @@ public class LineEnumeration implements Enumeration
 		this.width = width;
 		this.length = text.length();
 	}
-	
-	
+		
 	public boolean hasMoreElements()
 	{
 	    return (position < (length-1));
@@ -57,8 +56,7 @@ public class LineEnumeration implements Enumeration
 	        throw new NoSuchElementException(e.getMessage());
 	    }
 	}
-	
-
+	                
 	private int next()
 	{	    
 		int i = position;	
