@@ -13,7 +13,7 @@ public class Midlet extends MIDlet {
     fourLaw fourL;
     everyStudent eStudent;
 
-    splashScreen mysplashscreen = new splashScreen(this);
+    Splash mysplashscreen = new Splash(this);
     menu myMenu;
     public static final boolean DEBUG = false; public static final int WHITE = 0xFFFFFF;
     public static final int BLACK = 0x000000;
