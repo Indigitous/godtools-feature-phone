@@ -18,17 +18,19 @@ public final class fourLaws extends Canvas {
     int wrapWidth;
     private int button;
     private boolean button1, button2, button3;
-    private MyParser mypar = new MyParser("Assests/fourlaw/en/01_Home.xml");
-    private MyParser mypar2 = new MyParser("Assests/fourlaw/en/FirstPoint.xml");
-    private MyParser mypar3 = new MyParser("Assests/fourlaw/en/03_SecondPoint.xml");
-    private MyParser mypar4 = new MyParser("Assests/fourlaw/en/04_ThiredPoint.xml");
-    private MyParser mypar5 = new MyParser("Assests/fourlaw/en/05_fourthPoint.xml");
-    private MyParser mypar6 = new MyParser("Assests/fourlaw/en/06_FifthPoint.xml");
-    private MyParser mypar7 = new MyParser("Assests/fourlaw/en/07_SixthPoint.xml");
-    private MyParser mypar8 = new MyParser("Assests/fourlaw/en/08_SeventhPoint.xml");
-    private MyParser mypar9 = new MyParser("Assests/fourlaw/en/09_EithPoint.xml");
-    private MyParser mypar10 = new MyParser("Assests/fourlaw/en/10_NinethPoint.xml");
-    private MyParser mypar11 = new MyParser("Assests/fourlaw/en/11_TenthPoint.xml");
+   
+    private MyParser mypar = new MyParser("Assests/fourlaws/en/01_Home.xml");
+    private MyParser mypar2 = new MyParser("Assests/fourlaws/en/FirstPoint.xml");
+    private MyParser mypar3 = new MyParser("Assests/fourlaws/en/03_SecondPoint.xml");
+    private MyParser mypar4 = new MyParser("Assests/fourlaws/en/04_ThiredPoint.xml");
+    private MyParser mypar5 = new MyParser("Assests/fourlaws/en/05_fourthPoint.xml");
+    private MyParser mypar6 = new MyParser("Assests/fourlaws/en/06_FifthPoint.xml");
+    private MyParser mypar7 = new MyParser("Assests/fourlaws/en/07_SixthPoint.xml");
+    private MyParser mypar8 = new MyParser("Assests/fourlaws/en/08_SeventhPoint.xml");
+    private MyParser mypar9 = new MyParser("Assests/fourlaws/en/09_EithPoint.xml");
+    private MyParser mypar10 = new MyParser("Assests/fourlaws/en/10_NinethPoint.xml");
+    private MyParser mypar11 = new MyParser("Assests/fourlaws/en/11_TenthPoint.xml");
+    
     private int pages = 1;
     int titleWidth = 10;
     int titleHight = 12;
@@ -50,12 +52,6 @@ public final class fourLaws extends Canvas {
             down = Image.createImage("/image/down.jpg");
             fourth = Image.createImage("/image/forthpoint.jpg");
             plan = Image.createImage("/image/sinful.jpg");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        try {
-
             heisonly = Image.createImage("/image/only.jpg");
             selfy = Image.createImage("/image/selfy.jpg");
             christian = Image.createImage("/image/christian.jpg");
