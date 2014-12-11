@@ -1,3 +1,5 @@
+package Code;
+
 
 
 //import image.MyParser;
@@ -8,7 +10,7 @@ import javax.microedition.lcdui.Font;
 import javax.microedition.lcdui.Graphics;
 import javax.microedition.lcdui.Image;
 
-public final class satisfied extends Canvas{
+public final class everyStudent extends Canvas{
 
      public  Midlet midlet;
      
@@ -34,7 +36,7 @@ private MyParser mypar = new MyParser("xml/connectG/01_Home.xml");
    
    
    
-    public satisfied(Midlet mm) {
+    public everyStudent(Midlet mm) {
         midlet = mm;
         setFullScreenMode(true);
      

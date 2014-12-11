@@ -1,3 +1,5 @@
+package Code;
+
 
 
 import javax.microedition.lcdui.Display;
@@ -11,15 +13,15 @@ public class Midlet extends MIDlet {
     fourLaw fourL;
     everyStudent eStudent;
 
-    splashScreen mysplashscreen = new splashScreen(this);;
+    splashScreen mysplashscreen = new splashScreen(this);
     menu myMenu;
     public static final boolean DEBUG = false; public static final int WHITE = 0xFFFFFF;
     public static final int BLACK = 0x000000;
     public static final int BLUE = 0x0000FF;
     public static final int LIGHT_GRAY = 0xAAAAAA;
     public static final int DARK_GRAY = 0x555555;
-//    quizClass myquizclass;
-   // form form;
+    //quizClass myquizclass;
+    //form form;
     
     public Midlet()
     {
@@ -38,7 +40,7 @@ public class Midlet extends MIDlet {
         fourL.repaint();
         eStudent = new everyStudent(this);
         eStudent.repaint();
-     //   myquizclass = new quizClass(this);
+        //myquizclass = new quizClass(this);
         myMenu = new menu(this);
         d=Display.getDisplay(this);
         d.setCurrent(mysplashscreen);

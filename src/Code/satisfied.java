@@ -1,3 +1,5 @@
+package Code;
+
 
 
 //import image.MyParser;
@@ -10,8 +12,7 @@ import javax.microedition.lcdui.Image;
 
 public final class satisfied extends Canvas{
 
-     public  Midlet midlet;
-     
+    public  Midlet midlet;
     private static Image background2;
     private static Image up, down;
     private Image love, plan;
@@ -39,7 +40,7 @@ private MyParser mypar = new MyParser("xml/connectG/01_Home.xml");
         setFullScreenMode(true);
      
         
-         button1 = false;
+        button1 = false;
         button2 = false;
         
         try{

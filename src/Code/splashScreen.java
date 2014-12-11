@@ -1,14 +1,14 @@
+package Code;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
 
-
 import java.io.IOException;
 import javax.microedition.lcdui.Canvas;
 import javax.microedition.lcdui.Graphics;
 import javax.microedition.lcdui.Image;
-
 
 public final class splashScreen extends Canvas{
 Image splash;
@@ -38,13 +38,11 @@ Midlet main;
         if (splash== null)
             {
             try {
-                splash = Image.createImage("/image/splash.jpg");
-                splash = CreateScaledImage(splash, iViewW, iViewH);
+              splash = CreateScaledImage(Image.createImage("/image/splash.png"), iViewW, iViewH);
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
             }
-
             // draw background
             if (splash!= null) {
             g.drawImage(splash, iViewW / 2, iViewH / 2,Graphics.VCENTER | Graphics.HCENTER );
@@ -68,8 +66,7 @@ Midlet main;
 
                 //}
             //}*/
-        }
-        
+        }  
     
     
 

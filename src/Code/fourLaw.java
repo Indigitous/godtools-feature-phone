@@ -1,3 +1,5 @@
+package Code;
+
 
 
 //import image.MyParser;
@@ -8,13 +10,13 @@ import javax.microedition.lcdui.Font;
 import javax.microedition.lcdui.Graphics;
 import javax.microedition.lcdui.Image;
 
-public final class knowGod extends Canvas{
+public final class fourLaw extends Canvas{
 
      public  Midlet midlet;
      
     private static Image background2;
-    private static Image up, down ,plan,fourth;   
-    static Image christian, selfy,Gprove,Consequence;
+    private static Image up, down ,plan,fourth; 
+    static Image heisonly,selfy,christian,trust;
     Font fontSmall, fontMedium, fontLarge;
     int wrapWidth;
     private int button;
@@ -22,19 +24,18 @@ public final class knowGod extends Canvas{
         
    
     
-    private MyParser mypar = new MyParser("xml/knowG/01_Home.xml");
-    private MyParser mypar2 = new MyParser("xml/knowG/02_FirstPoint.xml");
-    private MyParser mypar3 = new MyParser("xml/knowG/03_SecondPoint.xml");
-    private MyParser mypar4 = new MyParser("xml/knowG/04_ThirdPoint.xml");
-    private MyParser mypar5 = new MyParser("xml/knowG/05_FourthPoint.xml");
-    private MyParser mypar6 = new MyParser("xml/knowG/06_TwoCircles.xml");
-    private MyParser mypar7 = new MyParser("xml/knowG/07_AttitudeOfYourHeart.xml");
-    private MyParser mypar8 = new MyParser("xml/knowG/08_SuggestedPrayer.xml");
-    private MyParser mypar9 = new MyParser("xml/knowG/09_WhatHappens.xml");
-    private MyParser mypar10 = new MyParser("xml/knowG/10_WhatHappensTwo.xml");
-    private MyParser mypar11 = new MyParser("xml/knowG/11_HowCanYouBeSure.xml");
-    private MyParser mypar12 = new MyParser("xml/knowG/12_HowToGrow.xml");
-    private MyParser mypar13 = new MyParser("xml/knowG/13_FinalPage.xml");
+    private MyParser mypar = new MyParser("xml/fourLaw/01_Home.xml");
+    private MyParser mypar2 = new MyParser("xml/fourLaw/02_FirstPoint.xml");
+    private MyParser mypar3 = new MyParser("xml/fourLaw/03_SecondPoint.xml");
+    private MyParser mypar4 = new MyParser("xml/fourLaw/04_ThiredPoint.xml");
+    private MyParser mypar5 = new MyParser("xml/fourLaw/05_fourthPoint.xml");
+    private MyParser mypar6 = new MyParser("xml/fourLaw/06_FifthPoint.xml");
+    private MyParser mypar7 = new MyParser("xml/fourLaw/07_SixthPoint.xml");
+    private MyParser mypar8 = new MyParser("xml/fourLaw/08_SeventhPoint.xml");
+    private MyParser mypar9 = new MyParser("xml/fourLaw/09_EithPoint.xml");
+    private MyParser mypar10 = new MyParser("xml/fourLaw/10_NinethPoint.xml");
+    private MyParser mypar11 = new MyParser("xml/fourLaw/11_TenthPoint.xml");
+    
     
     
     
@@ -49,7 +50,7 @@ public final class knowGod extends Canvas{
    
    
    
-    public knowGod(Midlet mm) {
+    public fourLaw(Midlet mm) {
         midlet = mm;
         setFullScreenMode(true);
      
@@ -63,15 +64,16 @@ public final class knowGod extends Canvas{
         down = Image.createImage("/image/down.jpg");
         fourth = Image.createImage("/image/forthpoint.jpg");
         plan = Image.createImage("/image/sinful.jpg");
-       
-        } catch(IOException e){ e.printStackTrace();}
-        try{
-        selfy = Image.createImage("/image/selfy.jpg");
-        christian = Image.createImage("/image/christian.jpg");
-        Consequence = Image.createImage("/image/consquence.jpg");
-        Gprove = Image.createImage("/image/Gprove.jpg");
         
        
+        } catch(IOException e){ e.printStackTrace();}
+        
+        try{
+        
+        heisonly = Image.createImage("/image/only.jpg");
+        selfy = Image.createImage("/image/selfy.jpg");
+        christian = Image.createImage("/image/christian.jpg");
+        trust = Image.createImage("/image/trust.jpg");
         } catch(IOException e){ e.printStackTrace();}
         
         fontSmall = Font.getFont(Font.FACE_SYSTEM, Font.STYLE_PLAIN, Font.SIZE_SMALL);
@@ -126,8 +128,8 @@ public final class knowGod extends Canvas{
             
       
   } 
-  /// knowGod one is done here
-  /// welcome to knowGod two
+  /// fourLawod one is done here
+  /// welcome to fourLawod two
     if(pages == 2){
 
    LineEnumeration e = new LineEnumeration(fontLarge, " "+mypar2.getNumber(), getWidth());
@@ -172,7 +174,7 @@ public final class knowGod extends Canvas{
 
        if (button1==true){
        g.setColor(200,255,0); 
-       g.fillRect(3, 115, getWidth()-6, 80);
+       g.fillRect(3, 115, getWidth()-6, 100);
        g.setColor(0,0,0);
        e = new LineEnumeration(fontMedium, mypar2.getPanelText1(), getWidth());
        e.writeTo(g, 5, 120, fontMedium);
@@ -202,15 +204,90 @@ public final class knowGod extends Canvas{
     if(pages == 3){
 
        LineEnumeration e = new LineEnumeration(fontLarge, " "+mypar3.getNumber(), getWidth());
+        e.writeTo(g, 0, titleHight, fontLarge);
+            
+      
+    e = new LineEnumeration(fontLarge, ". "+mypar3.getHeading(), getWidth());
+             
+                e.writeTo(g, 12, titleHight, fontLarge);
+   
+                g.setFont(fontMedium);
+                
+       if (button == 0){
+      g.setColor(200,255,0);
+      g.fillRect(0, 90 , getWidth()-15, 20 );
+       
+       
+       }
+       
+       if (button ==1){
+           g.setColor(200,255,0);
+           
+           g.fillRect(0, 198 ,getWidth()-15, 20);
+
+       }
+   //draw down images   
+                     g.drawImage(down, getWidth()-30, 90, Graphics.LEFT|Graphics.TOP);
+                     g.drawImage(down, getWidth()-30, 198, Graphics.LEFT|Graphics.TOP);
+                     
+//draw Break Lines
+                     g.setColor(0,0,0);
+                     
+       g.drawLine(0, 85, getWidth(), 85);
+           g.drawLine(0, 222, getWidth(), 222);
+           
+ //draw Buttons
+           g.drawString(mypar3.getPanelButton1(), 25, 90, Graphics.LEFT|Graphics.TOP);
+           g.drawString(mypar3.getPanelButton2(), 25, 198, Graphics.LEFT|Graphics.TOP);
+       
+    
+                            
+
+       if (button1==true){
+       g.setColor(200,255,0); 
+       g.fillRect(3, 115, getWidth()-6, 60);
+       g.setColor(0,0,0);
+       e = new LineEnumeration(fontMedium, mypar3.getPanelText1(), getWidth());
+       e.writeTo(g, 5, 120, fontMedium);
+       g.drawImage(up, getWidth()-30, 90, Graphics.LEFT|Graphics.TOP);
+       
+       }
+       
+       else if (button2 ==true){
+       g.setColor(200,255,0);
+       g.fillRect(3, 118, getWidth()-6, 60);
+       g.setColor(0,0,0);
+       e = new LineEnumeration(fontMedium, mypar3.getPanelText2(), getWidth());
+       e.writeTo(g, 5, 120, fontMedium);
+       g.drawImage(up, getWidth()-30, 198, Graphics.LEFT|Graphics.TOP);     
+       
+           
+           
+       }
+
+        e = new LineEnumeration(fontLarge, " "+mypar3.getQuestions(), getWidth());
+             
+                e.writeTo(g, 18, 240, fontMedium);
+   
+                g.setFont(fontMedium);
+
+     }
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////page4//////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    if(pages == 4){
+
+    LineEnumeration e = new LineEnumeration(fontLarge, " "+mypar4.getNumber(), getWidth());
        e.writeTo(g, 0, titleHight, fontLarge);
             
         
     
-       e = new LineEnumeration(fontLarge, ". "+mypar3.getHeading(), getWidth());
+       e = new LineEnumeration(fontLarge, ". "+mypar4.getHeading(), getWidth());
              
                 e.writeTo(g, 12, titleHight, fontLarge);
        g.setFont(fontMedium);
-         e = new LineEnumeration(fontLarge, " "+mypar3.getQuestions(), getWidth());
+         e = new LineEnumeration(fontLarge, " "+mypar4.getQuestions(), getWidth());
            
          e.writeTo(g, 18, 240, fontMedium);
                    g.setFont(fontMedium);
@@ -238,16 +315,16 @@ public final class knowGod extends Canvas{
        g.drawLine(0, 168, getWidth(), 168);
        g.drawLine(0, 198, getWidth(), 198);
        
-       g.drawString(mypar3.getPanelButton1(), 25, 140, Graphics.LEFT|Graphics.TOP);
-       g.drawString(mypar3.getPanelButton2(), 25, 170, Graphics.LEFT|Graphics.TOP);
-       g.drawString(mypar3.getPanelButton3(), 25, 200, Graphics.LEFT|Graphics.TOP);
+       g.drawString(mypar4.getPanelButton1(), 25, 140, Graphics.LEFT|Graphics.TOP);
+       g.drawString(mypar4.getPanelButton2(), 25, 170, Graphics.LEFT|Graphics.TOP);
+       g.drawString(mypar4.getPanelButton3(), 25, 200, Graphics.LEFT|Graphics.TOP);
            
 
        if (button1==true){
        g.setColor(200,255,0);
-       g.fillRect(3, 160, getWidth()-6, 170);
+       g.fillRect(3, 160, getWidth()-6, 70);
        g.setColor(0,0,0); 
-       e = new LineEnumeration(fontMedium, mypar3.getPanelText1(), getWidth());
+       e = new LineEnumeration(fontMedium, mypar4.getPanelText1(), getWidth());
        e.writeTo(g, 5, 160, fontMedium);
        
   
@@ -258,34 +335,31 @@ public final class knowGod extends Canvas{
         g.setColor(200,255,0);
        g.fillRect(3, 190, getWidth()-6, 70);   
        g.setColor(0,0,0);
-          e = new LineEnumeration(fontMedium, mypar3.getPanelText2(), getWidth());
+          e = new LineEnumeration(fontMedium, mypar4.getPanelText2(), getWidth());
        e.writeTo(g, 5, 195, fontMedium);
        
   
        g.drawImage(up, getWidth()-30, 170, Graphics.LEFT|Graphics.TOP);
        
+       
        }
        if (button3==true){
-        g.drawImage(Consequence, 0, 0, Graphics.LEFT|Graphics.TOP);
+
+       g.drawImage(heisonly, 0,0, Graphics.LEFT|Graphics.TOP);
        }
-          
+                       
+
        
-
      }
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    ///////////////////////////page4//////////////////////////////////////////////////////////////////////
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    
-    if(pages == 4){
-
-    LineEnumeration e = new LineEnumeration(fontLarge, " "+mypar4.getNumber(), getWidth());
-        e.writeTo(g, 0, titleHight, fontLarge);
-            
-      
-    e = new LineEnumeration(fontLarge, ". "+mypar4.getHeading(), getWidth());
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////7/
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  if(pages == 5){
+   LineEnumeration e = new LineEnumeration(fontLarge, " "+mypar5.getNumber(), getWidth());
+       e.writeTo(g, 0, titleHight, fontLarge);
+   e = new LineEnumeration(fontLarge, ". "+mypar5.getHeading(), getWidth());
              
                 e.writeTo(g, 12, titleHight, fontLarge);
-   
                 g.setFont(fontMedium);
                 
        if (button == 0){
@@ -315,15 +389,15 @@ public final class knowGod extends Canvas{
         g.drawLine(0, 248, getWidth(), 248);
            
  //draw Buttons
-           g.drawString(mypar4.getPanelButton1(), 25, 190, Graphics.LEFT|Graphics.TOP);
-           g.drawString(mypar4.getPanelButton2(), 25, 220, Graphics.LEFT|Graphics.TOP);
-           g.drawString(mypar4.getPanelButton3(), 25, 250, Graphics.LEFT|Graphics.TOP);
+           g.drawString(mypar5.getPanelButton1(), 25, 190, Graphics.LEFT|Graphics.TOP);
+           g.drawString(mypar5.getPanelButton2(), 25, 220, Graphics.LEFT|Graphics.TOP);
+           g.drawString(mypar5.getPanelButton3(), 25, 250, Graphics.LEFT|Graphics.TOP);
              
        if (button1==true){
            g.setColor(200,255,0);  
        g.fillRect(3, 210, getWidth()-6, 220);
        g.setColor(0,0,0);
-       e = new LineEnumeration(fontMedium, mypar4.getPanelText1(), getWidth());
+       e = new LineEnumeration(fontMedium, mypar5.getPanelText1(), getWidth());
        e.writeTo(g, 5, 210, fontMedium);
        
   
@@ -334,8 +408,8 @@ public final class knowGod extends Canvas{
        g.fillRect(3, 250, getWidth()-6, 80);
           
           g.setColor(0,0,0);
-          e = new LineEnumeration(fontMedium, mypar4.getPanelText2(), getWidth());
-          e.writeTo(g, 5, 250, fontMedium);
+          e = new LineEnumeration(fontMedium, mypar5.getPanelText2(), getWidth());
+          e.writeTo(g, 5, 252, fontMedium);
        
   
        g.drawImage(up, getWidth()-30, 220, Graphics.LEFT|Graphics.TOP);
@@ -343,34 +417,22 @@ public final class knowGod extends Canvas{
        }
        if (button3==true){
        g.setColor(200,255,0);
-       g.fillRect(3, 90, getWidth()-6, 200);
+       g.fillRect(3, 280, getWidth()-6, 45);
           g.setColor(0,0,0);
-          e = new LineEnumeration(fontMedium, mypar4.getPanelText3(), getWidth());
-          e.writeTo(g, 5, 100, fontMedium);
-       
-  
-       
-          
-       
-
+          e = new LineEnumeration(fontMedium, mypar5.getPanelText3(), getWidth());
+          e.writeTo(g, 5, 282, fontMedium);
+      
        }  
+            
+  }
+  if(pages == 6){
 
-     
-                            
-
-       
-     }
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////7/
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  if(pages == 5){
-
-   LineEnumeration e;
+  LineEnumeration e;
 
        g.setFont(fontMedium);
-         e = new LineEnumeration(fontLarge, " "+mypar4.getQuestions(), getWidth());
+         e = new LineEnumeration(fontLarge, " "+mypar5.getQuestions(), getWidth());
            
-         e.writeTo(g, 18, 240, fontMedium);
+         e.writeTo(g, 18, 215, fontLarge);
                    g.setFont(fontMedium);
                 
        if (button == 0){
@@ -390,119 +452,43 @@ public final class knowGod extends Canvas{
        g.drawLine(0, 138, getWidth(), 138);
        g.drawLine(0, 168, getWidth(), 168);
        
-       g.drawString(mypar4.getPanelButton4(), 25, 140, Graphics.LEFT|Graphics.TOP);
-       g.drawString(mypar4.getPanelButton5(), 25, 170, Graphics.LEFT|Graphics.TOP);
+       g.drawString(mypar5.getPanelButton4(), 25, 140, Graphics.LEFT|Graphics.TOP);
+       g.drawString(mypar5.getPanelButton5(), 25, 170, Graphics.LEFT|Graphics.TOP);
            
 
        if (button1==true){
        g.setColor(200,255,0);
-       g.fillRect(3, 160, getWidth()-6, 170);
+       g.fillRect(3, 160, getWidth()-6, 110);
        g.setColor(0,0,0); 
-       e = new LineEnumeration(fontMedium, mypar4.getPanelText4(), getWidth());
-       e.writeTo(g, 5, 160, fontMedium);
+       e = new LineEnumeration(fontMedium, mypar5.getPanelText4(), getWidth());
+       e.writeTo(g, 5, 165, fontMedium);
        
   
        g.drawImage(up, getWidth()-30, 140, Graphics.LEFT|Graphics.TOP);
        
        }
        if (button2==true){
-
-       g.drawImage(Gprove,0, 0, Graphics.LEFT|Graphics.TOP);
+        g.setColor(200,255,0);
+       g.fillRect(3, 40, getWidth()-6, 270);   
+       g.setColor(0,0,0);
+          e = new LineEnumeration(fontMedium, mypar5.getPanelText5(), getWidth());
+       e.writeTo(g, 5, 52, fontMedium);
        
-       }
-       
-
   
-  }
-  if(pages == 6){
-
-  LineEnumeration e = new LineEnumeration(fontLarge, " "+mypar5.getNumber(), getWidth());
-       e.writeTo(g, 0, titleHight, fontLarge);
-            
-        
-    
-       e = new LineEnumeration(fontLarge, ". "+mypar5.getHeading(), getWidth());
-             
-                e.writeTo(g, 12, titleHight, fontLarge);
-       g.setFont(fontSmall);
-         e = new LineEnumeration(fontLarge, " "+mypar5.getQuestions(), getWidth());
-           
-         e.writeTo(g, 24, 260, fontSmall);
-                   g.setFont(fontMedium);
-                
-       if (button == 0){
-      g.setColor(200,255,0);
-      g.fillRect(0, 180 , getWidth()-15, 20 );
       
-       }
-       if (button == 1){
-      g.setColor(200,255,0);
-      g.fillRect(0, 210 , getWidth()-15, 20 );
-
-       } 
-       if (button == 2){
-      g.setColor(200,255,0);
-      g.fillRect(0, 240 , getWidth()-15, 20 );
-       }
        
-       g.drawImage(down, getWidth()-30, 180, Graphics.LEFT|Graphics.TOP);
-       g.drawImage(down, getWidth()-30, 210, Graphics.LEFT|Graphics.TOP);
-       g.drawImage(down, getWidth()-30, 240, Graphics.LEFT|Graphics.TOP);
-                     g.setColor(0,0,0);
-       g.drawLine(0, 178, getWidth(), 178);
-       g.drawLine(0, 208, getWidth(), 208);
-       g.drawLine(0, 238, getWidth(), 238);
-       
-       
-       g.drawString(mypar5.getPanelButton1(), 25, 180, Graphics.LEFT|Graphics.TOP);
-       g.drawString(mypar5.getPanelButton2(), 25, 210, Graphics.LEFT|Graphics.TOP);
-       g.drawString(mypar5.getPanelButton2(), 25, 240, Graphics.LEFT|Graphics.TOP);
-           
-
-       if (button1==true){
-       g.setColor(200,255,0);
-       g.fillRect(3, 200, getWidth()-6, 170);
-       g.setColor(0,0,0); 
-       e = new LineEnumeration(fontMedium, mypar5.getPanelText1(), getWidth());
-       e.writeTo(g, 5, 200, fontMedium);
-       
-  
-       g.drawImage(up, getWidth()-30, 180, Graphics.LEFT|Graphics.TOP);
-       
-       }
-       if (button2==true){
-       g.setColor(200,255,0);
-       g.fillRect(3, 235, getWidth()-6, 70);   
-       g.setColor(0,0,0);
-          e = new LineEnumeration(fontMedium, mypar5.getPanelText2(), getWidth());
-       e.writeTo(g, 5, 235, fontMedium);
-       
-  
-       g.drawImage(up, getWidth()-30, 210, Graphics.LEFT|Graphics.TOP);
-       
-       }
-       if (button3==true){
-       g.setColor(200,255,0);
-       g.fillRect(3, 40, getWidth()-6, 230);   
-       g.setColor(0,0,0);
-          e = new LineEnumeration(fontMedium, mypar5.getPanelText3(), getWidth());
-       e.writeTo(g, 5, 45, fontMedium);
-       
-  
-
-       }       
-       
+       }   
      }
   if(pages == 7){
 
-   LineEnumeration e = new LineEnumeration(fontLarge, "   "+mypar6.getHeading(), getWidth());
+   LineEnumeration e = new LineEnumeration(fontLarge, " "+mypar6.getHeading(), getWidth());
              
                 e.writeTo(g, 12, titleHight, fontLarge);
+   
+                g.setFont(fontMedium);
    e = new LineEnumeration(fontLarge, " "+mypar6.getQuestions(), getWidth());
              
                 e.writeTo(g, 18, 240, fontMedium);
-   
-                g.setFont(fontMedium);
    
                 g.setFont(fontMedium);
                 
@@ -552,12 +538,70 @@ public final class knowGod extends Canvas{
            
        }
 
-       
+        
   }
        if(pages == 8){
-           LineEnumeration  e = new LineEnumeration(fontLarge, "   "+mypar7.getHeading(), getWidth());
+            LineEnumeration e = new LineEnumeration(fontLarge, " "+mypar7.getHeading(), getWidth());
              
                 e.writeTo(g, 12, titleHight, fontLarge);
+   
+                g.setFont(fontMedium);
+                
+       if (button == 0){
+      g.setColor(200,255,0);
+      g.fillRect(0, 90 , getWidth()-15, 20 );
+       
+       
+       }
+       
+       if (button ==1){
+           g.setColor(200,255,0);
+           
+           g.fillRect(0, 198 ,getWidth()-15, 20);
+
+       }
+   //draw down images   
+                     g.drawImage(down, getWidth()-30, 90, Graphics.LEFT|Graphics.TOP);
+                     g.drawImage(down, getWidth()-30, 198, Graphics.LEFT|Graphics.TOP);
+                     
+//draw Break Lines
+                     g.setColor(0,0,0);
+                     
+       g.drawLine(0, 85, getWidth(), 85);
+           g.drawLine(0, 222, getWidth(), 222);
+           
+ //draw Buttons
+           g.drawString(mypar7.getPanelButton1(), 25, 90, Graphics.LEFT|Graphics.TOP);
+           g.drawString(mypar7.getPanelButton2(), 25, 198, Graphics.LEFT|Graphics.TOP);
+       
+    
+                            
+
+       if (button1==true){
+       g.setColor(200,255,0); 
+       g.fillRect(3, 115, getWidth()-6, 100);
+       g.setColor(0,0,0);
+       e = new LineEnumeration(fontMedium, mypar7.getPanelText1(), getWidth());
+       e.writeTo(g, 5, 120, fontMedium);
+       g.drawImage(up, getWidth()-30, 90, Graphics.LEFT|Graphics.TOP);
+       
+       }
+       
+       else if (button2 ==true){
+       g.setColor(200,255,0);
+       g.fillRect(3, 100, getWidth()-6, 170);
+       g.setColor(0,0,0);
+       e = new LineEnumeration(fontMedium, mypar7.getPanelText2(), getWidth());
+       e.writeTo(g, 5, 110, fontMedium);
+          
+       
+           
+           
+       }
+
+        e = new LineEnumeration(fontLarge, " "+mypar7.getQuestions(), getWidth());
+             
+                e.writeTo(g, 18, 270, fontMedium);
    
                 g.setFont(fontMedium);
     
@@ -567,57 +611,195 @@ public final class knowGod extends Canvas{
    LineEnumeration e = new LineEnumeration(fontLarge, " "+mypar8.getHeading(), getWidth());
              
                 e.writeTo(g, 12, titleHight, fontLarge);
-   
-                g.setFont(fontMedium);
-      LineEnumeration e1 = new LineEnumeration(fontLarge, "  "+mypar8.getSubHeading(), getWidth());
-             
-                e1.writeTo(g, 50, 105, fontLarge);
-   
-                g.setFont(fontMedium);
-                e = new LineEnumeration(fontLarge, " "+mypar8.getQuestions(), getWidth());
-             
-                e.writeTo(g, 18, 240, fontMedium);
-   
                 g.setFont(fontMedium);
                 
        if (button == 0){
       g.setColor(200,255,0);
-      g.fillRect(0, 160 , getWidth()-15, 20 );
-             
+      g.fillRect(0, 190 , getWidth()-15, 20 );
+      
+       }
+       if (button == 1){
+      g.setColor(200,255,0);
+      g.fillRect(0, 220 , getWidth()-15, 20 );
+      
+       
+       
        } 
-
-        g.drawImage(down, getWidth()-30, 150, Graphics.LEFT|Graphics.TOP);
-        g.setColor(0,0,0);
+       if (button == 2){
+      g.setColor(200,255,0);
+      g.fillRect(0, 250 , getWidth()-15, 20 );
+       }
+        g.drawImage(down, getWidth()-30, 190, Graphics.LEFT|Graphics.TOP);
+        g.drawImage(down, getWidth()-30, 220, Graphics.LEFT|Graphics.TOP);
+        g.drawImage(down, getWidth()-30, 250, Graphics.LEFT|Graphics.TOP);
+  //draw Break Lines
+                     g.setColor(0,0,0);
                      
-       g.drawLine(0, 155, getWidth(), 155);
-       //draw Buttons
-           g.drawString(mypar8.getPanelButton1(), 25, 160, Graphics.LEFT|Graphics.TOP);
+        g.drawLine(0, 188, getWidth(), 188);
+        g.drawLine(0, 218, getWidth(), 218);
+        g.drawLine(0, 248, getWidth(), 248);
            
+ //draw Buttons
+           g.drawString(mypar8.getPanelButton1(), 25, 190, Graphics.LEFT|Graphics.TOP);
+           g.drawString(mypar8.getPanelButton2(), 25, 220, Graphics.LEFT|Graphics.TOP);
+           g.drawString(mypar8.getPanelButton3(), 25, 250, Graphics.LEFT|Graphics.TOP);
+             
        if (button1==true){
-           g.setColor(200,255,0);
-       g.fillRect(3, 20, getWidth()-6, 250);
-           g.setColor(0,0,0);
-          e = new LineEnumeration(fontMedium, mypar8.getPanelText1(), getWidth());
-       e.writeTo(g, 5, 45, fontMedium);
+           g.setColor(200,255,0);  
+       g.fillRect(3, 110, getWidth()-6, 170);
+       g.setColor(0,0,0);
+       e = new LineEnumeration(fontMedium, mypar8.getPanelText1(), getWidth());
+       e.writeTo(g, 5, 117, fontMedium);
        
   
-       //g.drawImage(up, getWidth()-30, 20, Graphics.LEFT|Graphics.TOP);
+      
+       
+       }if (button2==true){
+       g.setColor(200,255,0);
+       g.fillRect(3, 5, getWidth()-6, 315);
+          
+          g.setColor(0,0,0);
+          e = new LineEnumeration(fontMedium, mypar8.getPanelText2(), getWidth());
+          e.writeTo(g, 5, 9, fontMedium);
+       
+  
        
        }
+       if (button3==true){
        
+          g.drawImage(trust, 0, 10, Graphics.LEFT|Graphics.TOP);
+      
+       }
      }
        
-       if(pages == 10){
-           g.setFont(fontLarge);
+   if(pages == 10){
+   LineEnumeration e = new LineEnumeration(fontLarge, " "+mypar9.getNumber(), getWidth());
+       e.writeTo(g, 0, titleHight, fontLarge);
+   e = new LineEnumeration(fontLarge, ""+mypar9.getHeading(), getWidth());
+             
+                e.writeTo(g, 12, titleHight, fontLarge);
+                g.setFont(fontMedium);
+                
+       if (button == 0){
+      g.setColor(200,255,0);
+      g.fillRect(0, 190 , getWidth()-15, 20 );
+      
+       }
+       if (button == 1){
+      g.setColor(200,255,0);
+      g.fillRect(0, 220 , getWidth()-15, 20 );
+      
+       
+       
+       } 
+       if (button == 2){
+      g.setColor(200,255,0);
+      g.fillRect(0, 250 , getWidth()-15, 20 );
+       }
+        g.drawImage(down, getWidth()-30, 190, Graphics.LEFT|Graphics.TOP);
+        g.drawImage(down, getWidth()-30, 220, Graphics.LEFT|Graphics.TOP);
+        g.drawImage(down, getWidth()-30, 250, Graphics.LEFT|Graphics.TOP);
+  //draw Break Lines
+                     g.setColor(0,0,0);
+                     
+        g.drawLine(0, 188, getWidth(), 188);
+        g.drawLine(0, 218, getWidth(), 218);
+        g.drawLine(0, 248, getWidth(), 248);
+           
+ //draw Buttons
+           g.drawString(mypar9.getPanelButton1(), 25, 190, Graphics.LEFT|Graphics.TOP);
+           g.drawString(mypar9.getPanelButton2(), 25, 220, Graphics.LEFT|Graphics.TOP);
+           g.drawString(mypar9.getPanelButton3(), 25, 250, Graphics.LEFT|Graphics.TOP);
+             
+       if (button1==true){
+           g.setColor(200,255,0);  
+       g.fillRect(3, 215, getWidth()-6, 40);
+       g.setColor(0,0,0);
+       e = new LineEnumeration(fontMedium, mypar9.getPanelText1(), getWidth());
+       e.writeTo(g, 5, 218, fontMedium);
+       
+  
+       g.drawImage(up, getWidth()-30, 190, Graphics.LEFT|Graphics.TOP);
+       
+       }if (button2==true){
+       g.setColor(200,255,0);
+       g.fillRect(3, 245, getWidth()-6, 30);
+          
+          g.setColor(0,0,0);
+          e = new LineEnumeration(fontMedium, mypar9.getPanelText2(), getWidth());
+          e.writeTo(g, 5, 248, fontMedium);
+       
+  
+       g.drawImage(up, getWidth()-30, 220, Graphics.LEFT|Graphics.TOP);
+       
+       }
+       if (button3==true){
+       g.setColor(200,255,0);
+       g.fillRect(3, 275, getWidth()-6, 30);
+          g.setColor(0,0,0);
+          e = new LineEnumeration(fontMedium, mypar9.getPanelText3(), getWidth());
+          e.writeTo(g, 5, 278, fontMedium);
+      
+       }  
+            
+  }
+  if(pages == 11){
 
-   LineEnumeration e  = new LineEnumeration(fontLarge, " "+mypar9.getText(), getWidth());
-        e.writeTo(g, 0, titleHight + 100, fontLarge);
-                         
+  LineEnumeration e;
 
+       g.setFont(fontMedium);
+         e = new LineEnumeration(fontLarge, " "+mypar9.getQuestions(), getWidth());
+           
+         e.writeTo(g, 18, 215, fontLarge);
+                   g.setFont(fontMedium);
+                
+       if (button == 0){
+      g.setColor(200,255,0);
+      g.fillRect(0, 140 , getWidth()-15, 20 );
+      
+       }
+       if (button == 1){
+      g.setColor(200,255,0);
+      g.fillRect(0, 170 , getWidth()-15, 20 );
+
+       } 
+       
+       g.drawImage(down, getWidth()-30, 140, Graphics.LEFT|Graphics.TOP);
+       g.drawImage(down, getWidth()-30, 170, Graphics.LEFT|Graphics.TOP);
+                     g.setColor(0,0,0);
+       g.drawLine(0, 138, getWidth(), 138);
+       g.drawLine(0, 168, getWidth(), 168);
+       
+       g.drawString(mypar9.getPanelButton4(), 25, 140, Graphics.LEFT|Graphics.TOP);
+       g.drawString(mypar9.getPanelButton5(), 25, 170, Graphics.LEFT|Graphics.TOP);
+           
+
+       if (button1==true){
+       g.setColor(200,255,0);
+       g.fillRect(3, 165, getWidth()-6, 70);
+       g.setColor(0,0,0); 
+       e = new LineEnumeration(fontMedium, mypar9.getPanelText4(), getWidth());
+       e.writeTo(g, 5, 168, fontMedium);
+       
+  
+       g.drawImage(up, getWidth()-30, 140, Graphics.LEFT|Graphics.TOP);
+       
+       }
+       if (button2==true){
+        g.setColor(200,255,0);
+       g.fillRect(3, 195, getWidth()-6, 130);   
+       g.setColor(0,0,0);
+          e = new LineEnumeration(fontMedium, mypar9.getPanelText5(), getWidth());
+       e.writeTo(g, 5, 198, fontMedium);
+       
+  
+      
+       
+       }   
      }
        
-       if(pages == 11){
-      LineEnumeration e = new LineEnumeration(fontLarge, ""+mypar10.getHeading(), getWidth());
+  if(pages == 12){
+      LineEnumeration e = new LineEnumeration(fontLarge, " "+mypar10.getHeading(), getWidth());
              
                 e.writeTo(g, 12, titleHight, fontLarge);
                 g.setFont(fontMedium);
@@ -655,21 +837,21 @@ public final class knowGod extends Canvas{
              
        if (button1==true){
            g.setColor(200,255,0);  
-       g.fillRect(3, 210, getWidth()-6, 220);
+       g.fillRect(3, 212, getWidth()-6, 50);
        g.setColor(0,0,0);
        e = new LineEnumeration(fontMedium, mypar10.getPanelText1(), getWidth());
-       e.writeTo(g, 5, 210, fontMedium);
+       e.writeTo(g, 5, 214, fontMedium);
        
   
        g.drawImage(up, getWidth()-30, 190, Graphics.LEFT|Graphics.TOP);
        
        }if (button2==true){
        g.setColor(200,255,0);
-       g.fillRect(3, 250, getWidth()-6, 80);
+       g.fillRect(3, 242, getWidth()-6, 50);
           
           g.setColor(0,0,0);
           e = new LineEnumeration(fontMedium, mypar10.getPanelText2(), getWidth());
-          e.writeTo(g, 5, 250, fontMedium);
+          e.writeTo(g, 5, 244, fontMedium);
        
   
        g.drawImage(up, getWidth()-30, 220, Graphics.LEFT|Graphics.TOP);
@@ -677,15 +859,15 @@ public final class knowGod extends Canvas{
        }
        if (button3==true){
        g.setColor(200,255,0);
-       g.fillRect(3, 90, getWidth()-6, 200);
+       g.fillRect(3, 272, getWidth()-6, 50);
           g.setColor(0,0,0);
           e = new LineEnumeration(fontMedium, mypar10.getPanelText3(), getWidth());
-          e.writeTo(g, 5, 100, fontMedium);
+          e.writeTo(g, 5, 274, fontMedium);
       
        }  
             
      }
-      if(pages == 12){
+      if(pages == 13){
     LineEnumeration e;
 
        g.setFont(fontMedium);
@@ -696,54 +878,82 @@ public final class knowGod extends Canvas{
                 
        if (button == 0){
       g.setColor(200,255,0);
-      g.fillRect(0, 140 , getWidth()-15, 20 );
+      g.fillRect(0, 70 , getWidth()-15, 20 );
       
        }
        if (button == 1){
       g.setColor(200,255,0);
-      g.fillRect(0, 170 , getWidth()-15, 20 );
-
-       } 
+      g.fillRect(0, 120 , getWidth()-15, 20 );
+      
        
-       g.drawImage(down, getWidth()-30, 140, Graphics.LEFT|Graphics.TOP);
+       
+       } 
+       if (button == 2){
+      g.setColor(200,255,0);
+      g.fillRect(0, 170 , getWidth()-15, 20 );
+       }
+        
+       
+       g.drawImage(down, getWidth()-30, 70, Graphics.LEFT|Graphics.TOP);
+       g.drawImage(down, getWidth()-30, 120, Graphics.LEFT|Graphics.TOP);
        g.drawImage(down, getWidth()-30, 170, Graphics.LEFT|Graphics.TOP);
+       
                      g.setColor(0,0,0);
-       g.drawLine(0, 138, getWidth(), 138);
+       g.drawLine(0, 68, getWidth(), 68);
+       g.drawLine(0, 118, getWidth(), 118);
        g.drawLine(0, 168, getWidth(), 168);
        
-       g.drawString(mypar10.getPanelButton4(), 25, 140, Graphics.LEFT|Graphics.TOP);
-       g.drawString(mypar10.getPanelButton5(), 25, 170, Graphics.LEFT|Graphics.TOP);
+       
+       g.drawString(mypar10.getPanelButton4(), 25, 70, Graphics.LEFT|Graphics.TOP);
+       g.drawString(mypar10.getPanelButton5(), 25, 120, Graphics.LEFT|Graphics.TOP);
+       g.drawString(mypar10.getPanelButton6(), 25, 170, Graphics.LEFT|Graphics.TOP);
+       
            
 
        if (button1==true){
        g.setColor(200,255,0);
-       g.fillRect(3, 160, getWidth()-6, 170);
+       g.fillRect(3, 92, getWidth()-6, 60);
        g.setColor(0,0,0); 
        e = new LineEnumeration(fontMedium, mypar10.getPanelText4(), getWidth());
-       e.writeTo(g, 5, 160, fontMedium);
+       e.writeTo(g, 5, 100, fontMedium);
        
   
-       g.drawImage(up, getWidth()-30, 140, Graphics.LEFT|Graphics.TOP);
+       g.drawImage(up, getWidth()-30, 90, Graphics.LEFT|Graphics.TOP);
+       
+       } 
+       if (button2==true){
+       g.setColor(200,255,0);
+       g.fillRect(3, 142, getWidth()-6, 55);
+       g.setColor(0,0,0); 
+       e = new LineEnumeration(fontMedium, mypar10.getPanelText5(), getWidth());
+       e.writeTo(g, 5, 150, fontMedium);
+       
+  
+       g.drawImage(up, getWidth()-30, 120, Graphics.LEFT|Graphics.TOP);
        
        }
-       if (button2==true){
-        g.setColor(200,255,0);
-       g.fillRect(3, 190, getWidth()-6, 70);   
-       g.setColor(0,0,0);
-          e = new LineEnumeration(fontMedium, mypar10.getPanelText5(), getWidth());
-       e.writeTo(g, 5, 195, fontMedium);
+       if (button3==true){
+       g.setColor(200,255,0);
+       g.fillRect(3, 192, getWidth()-6, 70);
+       g.setColor(0,0,0); 
+       e = new LineEnumeration(fontMedium, mypar10.getPanelText6(), getWidth());
+       e.writeTo(g, 5, 198, fontMedium);
        
   
        g.drawImage(up, getWidth()-30, 170, Graphics.LEFT|Graphics.TOP);
        
-       }           
+       }
       }
-      
-      
-      if(pages == 13){
-      LineEnumeration e = new LineEnumeration(fontLarge, ""+mypar11.getHeading(), getWidth());
+      if(pages == 14){
+          
+     LineEnumeration e = new LineEnumeration(fontLarge, " "+mypar11.getHeading(), getWidth());
              
                 e.writeTo(g, 12, titleHight, fontLarge);
+                g.setFont(fontMedium);
+                
+                g.setFont(fontMedium);                        
+    LineEnumeration e2 = new LineEnumeration(fontMedium, " "+mypar11.getText(), getWidth());
+        e2.writeTo(g, 0, 100, fontMedium);
                 g.setFont(fontMedium);
                 
        if (button == 0){
@@ -779,269 +989,9 @@ public final class knowGod extends Canvas{
              
        if (button1==true){
            g.setColor(200,255,0);  
-       g.fillRect(3, 210, getWidth()-6, 220);
-       g.setColor(0,0,0);
-       e = new LineEnumeration(fontMedium, mypar11.getPanelText1(), getWidth());
-       e.writeTo(g, 5, 210, fontMedium);
-       
-  
-       g.drawImage(up, getWidth()-30, 190, Graphics.LEFT|Graphics.TOP);
-       
-       }if (button2==true){
-       g.setColor(200,255,0);
-       g.fillRect(3, 250, getWidth()-6, 80);
-          
-          g.setColor(0,0,0);
-          e = new LineEnumeration(fontMedium, mypar11.getPanelText2(), getWidth());
-          e.writeTo(g, 5, 250, fontMedium);
-       
-  
-       g.drawImage(up, getWidth()-30, 220, Graphics.LEFT|Graphics.TOP);
-       
-       }
-       if (button3==true){
-       g.setColor(200,255,0);
-       g.fillRect(3, 90, getWidth()-6, 180);
-          g.setColor(0,0,0);
-          e = new LineEnumeration(fontMedium, mypar11.getPanelText3(), getWidth());
-          e.writeTo(g, 5, 120, fontMedium);
-      
-       }  
-            
-     }
-      if(pages == 14){
-    LineEnumeration e;
-
-       g.setFont(fontMedium);
-         e = new LineEnumeration(fontLarge, " "+mypar11.getQuestions(), getWidth());
-           
-         e.writeTo(g, 18, 240, fontLarge);
-                   g.setFont(fontMedium);
-                
-       if (button == 0){
-      g.setColor(200,255,0);
-      g.fillRect(0, 140 , getWidth()-15, 20 );
-      
-       }
-        
-       
-       g.drawImage(down, getWidth()-30, 140, Graphics.LEFT|Graphics.TOP);
-       
-                     g.setColor(0,0,0);
-       g.drawLine(0, 138, getWidth(), 138);
-       
-       
-       g.drawString(mypar11.getPanelButton4(), 25, 140, Graphics.LEFT|Graphics.TOP);
-       
-           
-
-       if (button1==true){
-       g.setColor(200,255,0);
-       g.fillRect(3, 160, getWidth()-6, 170);
-       g.setColor(0,0,0); 
-       e = new LineEnumeration(fontMedium, mypar11.getPanelText4(), getWidth());
-       e.writeTo(g, 5, 160, fontMedium);
-       
-  
-       g.drawImage(up, getWidth()-30, 140, Graphics.LEFT|Graphics.TOP);
-       
-       }          
-      }
-      
-      if(pages == 15){
-      LineEnumeration e = new LineEnumeration(fontLarge, " "+mypar12.getHeading(), getWidth());
-             
-                e.writeTo(g, 12, titleHight, fontLarge);
-                g.setFont(fontMedium);
-                
-       if (button == 0){
-      g.setColor(200,255,0);
-      g.fillRect(0, 190 , getWidth()-15, 20 );
-      
-       }
-       if (button == 1){
-      g.setColor(200,255,0);
-      g.fillRect(0, 220 , getWidth()-15, 20 );
-      
-       
-       
-       } 
-       if (button == 2){
-      g.setColor(200,255,0);
-      g.fillRect(0, 250 , getWidth()-15, 20 );
-       }
-        g.drawImage(down, getWidth()-30, 190, Graphics.LEFT|Graphics.TOP);
-        g.drawImage(down, getWidth()-30, 220, Graphics.LEFT|Graphics.TOP);
-        g.drawImage(down, getWidth()-30, 250, Graphics.LEFT|Graphics.TOP);
-  //draw Break Lines
-                     g.setColor(0,0,0);
-                     
-        g.drawLine(0, 188, getWidth(), 188);
-        g.drawLine(0, 218, getWidth(), 218);
-        g.drawLine(0, 248, getWidth(), 248);
-           
- //draw Buttons
-           g.drawString(mypar12.getPanelButton1(), 25, 190, Graphics.LEFT|Graphics.TOP);
-           g.drawString(mypar12.getPanelButton2(), 25, 220, Graphics.LEFT|Graphics.TOP);
-           g.drawString(mypar12.getPanelButton3(), 25, 250, Graphics.LEFT|Graphics.TOP);
-             
-       if (button1==true){
-           g.setColor(200,255,0);  
-       g.fillRect(3, 212, getWidth()-6, 100);
-       g.setColor(0,0,0);
-       e = new LineEnumeration(fontMedium, mypar12.getPanelText1(), getWidth());
-       e.writeTo(g, 5, 214, fontMedium);
-       
-  
-       g.drawImage(up, getWidth()-30, 190, Graphics.LEFT|Graphics.TOP);
-       
-       }if (button2==true){
-       g.setColor(200,255,0);
-       g.fillRect(3, 242, getWidth()-6, 50);
-          
-          g.setColor(0,0,0);
-          e = new LineEnumeration(fontMedium, mypar12.getPanelText2(), getWidth());
-          e.writeTo(g, 5, 244, fontMedium);
-       
-  
-       g.drawImage(up, getWidth()-30, 220, Graphics.LEFT|Graphics.TOP);
-       
-       }
-       if (button3==true){
-       g.setColor(200,255,0);
-       g.fillRect(3, 272, getWidth()-6, 50);
-          g.setColor(0,0,0);
-          e = new LineEnumeration(fontMedium, mypar12.getPanelText3(), getWidth());
-          e.writeTo(g, 5, 274, fontMedium);
-      
-       }  
-            
-     }
-      if(pages == 16){
-    LineEnumeration e;
-
-       g.setFont(fontMedium);
-         e = new LineEnumeration(fontLarge, " "+mypar12.getQuestions(), getWidth());
-           
-         e.writeTo(g, 18, 240, fontLarge);
-                   g.setFont(fontMedium);
-                
-       if (button == 0){
-      g.setColor(200,255,0);
-      g.fillRect(0, 70 , getWidth()-15, 20 );
-      
-       }
-       if (button == 1){
-      g.setColor(200,255,0);
-      g.fillRect(0, 120 , getWidth()-15, 20 );
-      
-       
-       
-       } 
-       if (button == 2){
-      g.setColor(200,255,0);
-      g.fillRect(0, 170 , getWidth()-15, 20 );
-       }
-        
-       
-       g.drawImage(down, getWidth()-30, 70, Graphics.LEFT|Graphics.TOP);
-       g.drawImage(down, getWidth()-30, 120, Graphics.LEFT|Graphics.TOP);
-       g.drawImage(down, getWidth()-30, 170, Graphics.LEFT|Graphics.TOP);
-       
-                     g.setColor(0,0,0);
-       g.drawLine(0, 68, getWidth(), 68);
-       g.drawLine(0, 118, getWidth(), 118);
-       g.drawLine(0, 168, getWidth(), 168);
-       
-       
-       g.drawString(mypar12.getPanelButton4(), 25, 70, Graphics.LEFT|Graphics.TOP);
-       g.drawString(mypar12.getPanelButton5(), 25, 120, Graphics.LEFT|Graphics.TOP);
-       g.drawString(mypar12.getPanelButton6(), 25, 170, Graphics.LEFT|Graphics.TOP);
-       
-           
-
-       if (button1==true){
-       g.setColor(200,255,0);
-       g.fillRect(3, 92, getWidth()-6, 60);
-       g.setColor(0,0,0); 
-       e = new LineEnumeration(fontMedium, mypar12.getPanelText4(), getWidth());
-       e.writeTo(g, 5, 100, fontMedium);
-       
-  
-       g.drawImage(up, getWidth()-30, 120, Graphics.LEFT|Graphics.TOP);
-       
-       } 
-       if (button2==true){
-       g.setColor(200,255,0);
-       g.fillRect(3, 142, getWidth()-6, 120);
-       g.setColor(0,0,0); 
-       e = new LineEnumeration(fontMedium, mypar12.getPanelText5(), getWidth());
-       e.writeTo(g, 5, 150, fontMedium);
-       
-  
-       g.drawImage(up, getWidth()-30, 120, Graphics.LEFT|Graphics.TOP);
-       
-       }
-       if (button3==true){
-       g.setColor(200,255,0);
-       g.fillRect(3, 192, getWidth()-6, 120);
-       g.setColor(0,0,0); 
-       e = new LineEnumeration(fontMedium, mypar12.getPanelText6(), getWidth());
-       e.writeTo(g, 5, 198, fontMedium);
-       
-  
-       g.drawImage(up, getWidth()-30, 170, Graphics.LEFT|Graphics.TOP);
-       
-       }
-      }
-      if(pages == 17){
-          
-     LineEnumeration e = new LineEnumeration(fontLarge, " "+mypar13.getHeading(), getWidth());
-             
-                e.writeTo(g, 12, titleHight, fontLarge);
-                g.setFont(fontMedium);
-                
-                g.setFont(fontMedium);                        
-    LineEnumeration e2 = new LineEnumeration(fontMedium, " "+mypar13.getText(), getWidth());
-        e2.writeTo(g, 0, 100, fontMedium);
-                g.setFont(fontMedium);
-                
-       if (button == 0){
-      g.setColor(200,255,0);
-      g.fillRect(0, 190 , getWidth()-15, 20 );
-      
-       }
-       if (button == 1){
-      g.setColor(200,255,0);
-      g.fillRect(0, 220 , getWidth()-15, 20 );
-      
-       
-       
-       } 
-       if (button == 2){
-      g.setColor(200,255,0);
-      g.fillRect(0, 250 , getWidth()-15, 20 );
-       }
-        g.drawImage(down, getWidth()-30, 190, Graphics.LEFT|Graphics.TOP);
-        g.drawImage(down, getWidth()-30, 220, Graphics.LEFT|Graphics.TOP);
-        g.drawImage(down, getWidth()-30, 250, Graphics.LEFT|Graphics.TOP);
-  //draw Break Lines
-                     g.setColor(0,0,0);
-                     
-        g.drawLine(0, 188, getWidth(), 188);
-        g.drawLine(0, 218, getWidth(), 218);
-        g.drawLine(0, 248, getWidth(), 248);
-           
- //draw Buttons
-           g.drawString(mypar13.getPanelButton1(), 25, 190, Graphics.LEFT|Graphics.TOP);
-           g.drawString(mypar13.getPanelButton2(), 25, 220, Graphics.LEFT|Graphics.TOP);
-           g.drawString(mypar13.getPanelButton3(), 25, 250, Graphics.LEFT|Graphics.TOP);
-             
-       if (button1==true){
-           g.setColor(200,255,0);  
        g.fillRect(3, 190, getWidth()-6, 20);
        g.setColor(0,0,0);
-       e = new LineEnumeration(fontMedium, mypar13.getPanelText1(), getWidth());
+       e = new LineEnumeration(fontMedium, mypar11.getPanelText1(), getWidth());
        e.writeTo(g, 5, 192, fontMedium);
        
   
@@ -1052,7 +1002,7 @@ public final class knowGod extends Canvas{
        g.fillRect(3, 220, getWidth()-6, 20);
           
           g.setColor(0,0,0);
-          e = new LineEnumeration(fontMedium, mypar13.getPanelText2(), getWidth());
+          e = new LineEnumeration(fontMedium, mypar11.getPanelText2(), getWidth());
           e.writeTo(g, 5, 222, fontMedium);
        
   
@@ -1063,12 +1013,14 @@ public final class knowGod extends Canvas{
        g.setColor(200,255,0);
        g.fillRect(3, 250, getWidth()-6, 20);
           g.setColor(0,0,0);
-          e = new LineEnumeration(fontMedium, mypar13.getPanelText3(), getWidth());
+          e = new LineEnumeration(fontMedium, mypar11.getPanelText3(), getWidth());
           e.writeTo(g, 5, 252, fontMedium);
       
        }  
-                          
+          
       }
+  
+    
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////7/
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1094,8 +1046,8 @@ public final class knowGod extends Canvas{
         }
         else if (getGameAction(keyCode) == RIGHT){
             pages = pages +1;
-             if (pages ==18){
-                 pages =17;
+             if (pages ==15){
+                 pages =14;
                          }
             
         }
