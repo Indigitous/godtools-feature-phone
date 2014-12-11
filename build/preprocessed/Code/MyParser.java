@@ -495,5 +495,4 @@ public class MyParser {
 	public String getQuestions() {
 		return questions;
 	}
-
 }
