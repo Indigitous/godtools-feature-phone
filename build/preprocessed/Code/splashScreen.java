@@ -29,8 +29,7 @@ Midlet main;
         }
     }*/
      
-    
-    protected void paint(Graphics g) {
+      protected void paint(Graphics g) {
       int iViewH = this.getHeight();
       int iViewW = this.getWidth();
 
