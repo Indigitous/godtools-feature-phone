@@ -16,7 +16,7 @@ public class Splash extends Canvas{
 
     protected void paint(Graphics g) {
         try {
-            g.setColor(170, 170, 170);
+            g.setColor(255, 255, 255);
             g.fillRect(0, 0, getWidth(), getHeight());
             int i=0;
             while(i<6)
@@ -26,7 +26,7 @@ public class Splash extends Canvas{
             i++;
             }
            
-            g.drawImage(Image.createImage("/img/splash.png"), getWidth() / 2, getHeight() / 5, Graphics.TOP | Graphics.HCENTER);
+            g.drawImage(Image.createImage("/image/splash.png"), getWidth() / 2, getHeight() / 5, Graphics.TOP | Graphics.HCENTER);
 
         } catch (IOException ex) {
         }
