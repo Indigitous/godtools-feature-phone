@@ -32,6 +32,27 @@ public class operations {
         System.gc();
         return "Loading Error . . .";
     }
+    
+    public String readJson(String file) // read the txt file from resource
+    {
+        InputStream is = getClass().getResourceAsStream(file);
+        StringBuffer sb = new StringBuffer();
+
+        try {
+            InputStreamReader isr = new InputStreamReader(is, "UTF-8");
+            int chars;
+            while ((chars = isr.read()) != -1) {
+                sb.append((char) chars);
+            }
+            System.gc();
+            return sb.toString();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        System.gc();
+        return "Loading Error ...";
+    }
+     
     public int drawTxt(Graphics g, Vector TxtToBePaint, int txtPlace_Y, int type, int screenwidth) { // 0 is title, 1 , is subtitle , 2 is content , 3 is end
         int padding = Font.getDefaultFont().getHeight(); // space down
 
