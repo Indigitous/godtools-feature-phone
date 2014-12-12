@@ -10,33 +10,33 @@ import org.xml.sax.helpers.DefaultHandler;
 
 public class MyParser {
 
-    private String headings = "";
-    private String numbers = "";
-    private String peekpanels = "";
-    private String subheads = "";
-    private String buttontexts = "";
-    private String buttonimages = "";
-    private String panelbuttons1 = "";
-    private String panelimages1 = "";
-    private String paneltexts1 = "";
-    private String panelbuttons2 = "";
-    private String panelimages2 = "";
-    private String paneltexts2 = "";
-    private String panelbuttons3 = "";
-    private String panelimages3 = "";
-    private String paneltexts3 = "";
-    private String panelbuttons4 = "";
-    private String panelimages4 = "";
-    private String paneltexts4 = "";
-    private String panelbuttons5 = "";
-    private String panelimages5 = "";
-    private String paneltexts5 = "";
-    private String panelbuttons6 = "";
-    private String panelimages6 = "";
-    private String paneltexts6 = "";
-    private String texts = "";
-    private String images = "";
-    private String questions = "";
+    private String heading = "";
+    private String number = "";
+    private String peekpanel = "";
+    private String subhead = "";
+    private String buttontext = "";
+    private String buttonimage = "";
+    private String panelbutton1 = "";
+    private String panelimage1 = "";
+    private String paneltext1 = "";
+    private String panelbutton2 = "";
+    private String panelimage2 = "";
+    private String paneltext2 = "";
+    private String panelbutton3 = "";
+    private String panelimage3 = "";
+    private String paneltext3 = "";
+    private String panelbutton4 = "";
+    private String panelimage4 = "";
+    private String paneltext4 = "";
+    private String panelbutton5 = "";
+    private String panelimage5 = "";
+    private String paneltext5 = "";
+    private String panelbutton6 = "";
+    private String panelimage6 = "";
+    private String paneltext6 = "";
+    private String text = "";
+    private String image = "";
+    private String question = "";
 
     public MyParser(String path) {
         try {
@@ -45,136 +45,135 @@ public class MyParser {
             SAXParser saxParser = factory.newSAXParser();
 
             DefaultHandler MyHandler = new DefaultHandler() {
-                boolean heading = false;
-                boolean number = false;
-                boolean peekpanel = false;
-                boolean subheading = false;
-                boolean buttontext = false;
-                boolean bimage = false;
-                boolean pbutton1 = false;
-                boolean pimage1 = false;
-                boolean ptext1 = false;
-                boolean pbutton2 = false;
-                boolean pimage2 = false;
-                boolean ptext2 = false;
-                boolean pbutton3 = false;
-                boolean pimage3 = false;
-                boolean ptext3 = false;
-                boolean pbutton4 = false;
-                boolean pimage4 = false;
-                boolean ptext4 = false;
-                boolean pbutton5 = false;
-                boolean pimage5 = false;
-                boolean ptext5 = false;
-                boolean pbutton6 = false;
-                boolean pimage6 = false;
-                boolean ptext6 = false;
-                boolean text = false;
-                boolean image = false;
-                boolean question = false;
+                boolean b_heading = false;
+                boolean b_number = false;
+                boolean b_peekpanel = false;
+                boolean b_subheading = false;
+                boolean b_buttontext = false;
+                boolean b_bimage = false;
+                boolean b_pbutton1 = false;
+                boolean b_pimage1 = false;
+                boolean b_ptext1 = false;
+                boolean b_pbutton2 = false;
+                boolean b_pimage2 = false;
+                boolean b_ptext2 = false;
+                boolean b_pbutton3 = false;
+                boolean b_pimage3 = false;
+                boolean b_ptext3 = false;
+                boolean b_pbutton4 = false;
+                boolean b_pimage4 = false;
+                boolean b_ptext4 = false;
+                boolean b_pbutton5 = false;
+                boolean b_pimage5 = false;
+                boolean b_ptext5 = false;
+                boolean b_pbutton6 = false;
+                boolean b_pimage6 = false;
+                boolean b_ptext6 = false;
+                boolean b_text = false;
+                boolean b_image = false;
+                boolean b_question = false;
 
                 public void startElement(String uri, String localName,
                         String qName, Attributes attributes)
                         throws SAXException {
                     if (qName.equals("heading")) {
-                        heading = true;
+                        b_heading = true;
                     }
 
                     if (qName.equals("number")) {
-                        number = true;
+                        b_number = true;
                     }
 
                     if (qName.equals("peekpanel")) {
-                        peekpanel = true;
+                        b_peekpanel = true;
                     }
 
                     if (qName.equals("subheading")) {
-                        subheading = true;
+                        b_subheading = true;
                     }
                     if (qName.equals("buttontext")) {
-                        buttontext = true;
+                        b_buttontext = true;
                     }
 
                     if (qName.equals("number")) {
-                        number = true;
+                        b_number = true;
                     }
 
                     if (qName.equals("pbutton1")) {
-                        pbutton1 = true;
+                        b_pbutton1 = true;
                     }
                     if (qName.equals("pimage1")) {
-                        pimage1 = true;
+                        b_pimage1 = true;
                     }
 
                     if (qName.equals("ptext1")) {
-                        ptext1 = true;
+                        b_ptext1 = true;
                     }
 
                     if (qName.equals("pbutton2")) {
-                        pbutton2 = true;
+                        b_pbutton2 = true;
                     }
                     if (qName.equals("pimage2")) {
-                        pimage2 = true;
+                        b_pimage2 = true;
                     }
 
                     if (qName.equals("ptext2")) {
-                        ptext2 = true;
+                        b_ptext2 = true;
                     }
-
 
                     if (qName.equals("pbutton3")) {
-                        pbutton3 = true;
+                        b_pbutton3 = true;
                     }
                     if (qName.equals("pimage3")) {
-                        pimage3 = true;
+                        b_pimage3 = true;
                     }
 
                     if (qName.equals("ptext3")) {
-                        ptext3 = true;
+                        b_ptext3 = true;
                     }
 
                     if (qName.equals("pbutton4")) {
-                        pbutton4 = true;
+                        b_pbutton4 = true;
                     }
                     if (qName.equals("pimage4")) {
-                        pimage4 = true;
+                        b_pimage4 = true;
                     }
 
                     if (qName.equals("ptext4")) {
-                        ptext4 = true;
+                        b_ptext4 = true;
                     }
 
                     if (qName.equals("pbutton5")) {
-                        pbutton5 = true;
+                        b_pbutton5 = true;
                     }
                     if (qName.equals("pimage5")) {
-                        pimage5 = true;
+                        b_pimage5 = true;
                     }
 
                     if (qName.equals("ptext5")) {
-                        ptext5 = true;
+                        b_ptext5 = true;
                     }
 
                     if (qName.equals("pbutton6")) {
-                        pbutton6 = true;
+                        b_pbutton6 = true;
                     }
                     if (qName.equals("pimage6")) {
-                        pimage6 = true;
+                        b_pimage6 = true;
                     }
 
                     if (qName.equals("ptext6")) {
-                        ptext6 = true;
+                        b_ptext6 = true;
                     }
 
                     if (qName.equals("text")) {
-                        text = true;
+                        b_text = true;
                     }
 
                     if (qName.equals("image")) {
-                        image = true;
+                        b_image = true;
                     }
                     if (qName.equals("question")) {
-                        question = true;
+                        b_question = true;
                     }
 
                 }
@@ -182,123 +181,116 @@ public class MyParser {
                 public void characters(char ch[], int start, int length)
                         throws SAXException {
 
-                    if (heading) {
-                        headings = (new String(ch, start, length));
-                        heading = false;
+                    if (b_heading) {
+                        heading = (new String(ch, start, length));
+                        b_heading = false;
                     }
 
-                    if (number) {
-                        numbers = (new String(ch, start, length));
-                        number = false;
+                    if (b_number) {
+                        number = (new String(ch, start, length));
+                        b_number = false;
                     }
 
-                    if (peekpanel) {
-                        peekpanels = (new String(ch, start, length));
-                        peekpanel = false;
+                    if (b_peekpanel) {
+                        peekpanel = (new String(ch, start, length));
+                        b_peekpanel = false;
                     }
 
-                    if (subheading) {
-                        subheads = (new String(ch, start, length));
-                        subheading = false;
+                    if (b_subheading) {
+                        subhead = (new String(ch, start, length));
+                        b_subheading = false;
                     }
-                    if (buttontext) {
-                        buttontexts = (new String(ch, start, length));
-                        buttontext = false;
+                    if (b_buttontext) {
+                        buttontext = (new String(ch, start, length));
+                        b_buttontext = false;
                     }
-                    if (bimage) {
-                        buttonimages = (new String(ch, start, length));
-                        bimage = false;
+                    if (b_bimage) {
+                        buttonimage = (new String(ch, start, length));
+                        b_bimage = false;
                     }
-                    if (pbutton1) {
-                        panelbuttons1 = (new String(ch, start, length));
-                        pbutton1 = false;
+                    if (b_pbutton1) {
+                        panelbutton1 = (new String(ch, start, length));
+                        b_pbutton1 = false;
                     }
-                    if (pimage1) {
-                        panelimages1 = (new String(ch, start, length));
-                        pimage1 = false;
+                    if (b_pimage1) {
+                        panelimage1 = (new String(ch, start, length));
+                        b_pimage1 = false;
                     }
-                    if (ptext1) {
-                        paneltexts1 = (new String(ch, start, length));
-                        ptext1 = false;
+                    if (b_ptext1) {
+                        paneltext1 = (new String(ch, start, length));
+                        b_ptext1 = false;
                     }
-
-
-                    if (pbutton2) {
-                        panelbuttons2 = (new String(ch, start, length));
-                        pbutton2 = false;
+                    if (b_pbutton2) {
+                        panelbutton2 = (new String(ch, start, length));
+                        b_pbutton2 = false;
                     }
-                    if (pimage2) {
-                        panelimages2 = (new String(ch, start, length));
-                        pimage2 = false;
+                    if (b_pimage2) {
+                        panelimage2 = (new String(ch, start, length));
+                        b_pimage2 = false;
                     }
-                    if (ptext2) {
-                        paneltexts2 = (new String(ch, start, length));
-                        ptext2 = false;
+                    if (b_ptext2) {
+                        paneltext2 = (new String(ch, start, length));
+                        b_ptext2 = false;
                     }
-
-                    if (pbutton3) {
-                        panelbuttons3 = (new String(ch, start, length));
-                        pbutton3 = false;
+                    if (b_pbutton3) {
+                        panelbutton3 = (new String(ch, start, length));
+                        b_pbutton3 = false;
                     }
-                    if (pimage3) {
-                        panelimages3 = (new String(ch, start, length));
-                        pimage3 = false;
+                    if (b_pimage3) {
+                        panelimage3 = (new String(ch, start, length));
+                        b_pimage3 = false;
                     }
-                    if (ptext3) {
-                        paneltexts3 = (new String(ch, start, length));
-                        ptext3 = false;
+                    if (b_ptext3) {
+                        paneltext3 = (new String(ch, start, length));
+                        b_ptext3 = false;
                     }
-
-                    if (pbutton4) {
-                        panelbuttons4 = (new String(ch, start, length));
-                        pbutton4 = false;
+                    if (b_pbutton4) {
+                        panelbutton4 = (new String(ch, start, length));
+                        b_pbutton4 = false;
                     }
-                    if (pimage4) {
-                        panelimages4 = (new String(ch, start, length));
-                        pimage4 = false;
+                    if (b_pimage4) {
+                        panelimage4 = (new String(ch, start, length));
+                        b_pimage4 = false;
                     }
-                    if (ptext4) {
-                        paneltexts4 = (new String(ch, start, length));
-                        ptext4 = false;
+                    if (b_ptext4) {
+                        paneltext4 = (new String(ch, start, length));
+                        b_ptext4 = false;
                     }
-
-                    if (pbutton5) {
-                        panelbuttons5 = (new String(ch, start, length));
-                        pbutton5 = false;
+                    if (b_pbutton5) {
+                        panelbutton5 = (new String(ch, start, length));
+                        b_pbutton5 = false;
                     }
-                    if (pimage5) {
-                        panelimages5 = (new String(ch, start, length));
-                        pimage5 = false;
+                    if (b_pimage5) {
+                        panelimage5 = (new String(ch, start, length));
+                        b_pimage5 = false;
                     }
-                    if (ptext5) {
-                        paneltexts5 = (new String(ch, start, length));
-                        ptext5 = false;
+                    if (b_ptext5) {
+                        paneltext5 = (new String(ch, start, length));
+                        b_ptext5 = false;
                     }
-                    if (pbutton6) {
-                        panelbuttons6 = (new String(ch, start, length));
-                        pbutton6 = false;
+                    if (b_pbutton6) {
+                        panelbutton6 = (new String(ch, start, length));
+                        b_pbutton6 = false;
                     }
-                    if (pimage6) {
-                        panelimages6 = (new String(ch, start, length));
-                        pimage6 = false;
+                    if (b_pimage6) {
+                        panelimage6 = (new String(ch, start, length));
+                        b_pimage6 = false;
                     }
-                    if (ptext6) {
-                        paneltexts6 = (new String(ch, start, length));
-                        ptext6 = false;
+                    if (b_ptext6) {
+                        paneltext6 = (new String(ch, start, length));
+                        b_ptext6 = false;
                     }
-
-
-                    if (text) {
-                        texts = (new String(ch, start, length));
-                        text = false;
+                    if (b_text) {
+                        text = (new String(ch, start, length));
+                        b_text = false;
                     }
-                    if (image) {
-                        images = (new String(ch, start, length));
-                        image = false;
+                    if (b_image) {
+                        image = (new String(ch, start, length));
+                        b_image = false;
                     }
-                    if (question) {
-                        questions = (new String(ch, start, length));
-                        question = false;
+                    if (b_question) {
+                        question = (new String(ch, start, length));
+                        b_question = false;
                     }
                 }
             };
@@ -310,179 +302,172 @@ public class MyParser {
             } catch (Exception e) {
             }
 
-
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     public String getHeading() {
-        return headings;
+        return heading;
     }
 
     public String getNumber() {
-        return numbers;
+        return number;
     }
 
     public String getPeekPanel() {
-        return peekpanels;
+        return peekpanel;
     }
 
     public String getSubHeading() {
-        return subheads;
+        return subhead;
     }
 
     public String getButtonImage() {
-        return buttonimages;
+        return buttonimage;
     }
 
     public String getButtonText() {
-        return buttontexts;
+        return buttontext;
     }
 
     public String getPanelButton1() {
-        return panelbuttons1;
+        return panelbutton1;
     }
 
     public String getPanelImage1() {
         String str = "";
         char kar = '_';
-        for (int i = 0; i < panelimages1.length(); i++) {
+        for (int i = 0; i < panelimage1.length(); i++) {
             if (kar == '/' | kar == '"') {
             } else {
-                str = str + panelimages1.charAt(i);
+                str = str + panelimage1.charAt(i);
             }
-
         }
         return str;
     }
 
     public String getPanelText1() {
-        return paneltexts1;
+        return paneltext1;
     }
 
     public String getPanelButton2() {
-        return panelbuttons2;
+        return panelbutton2;
     }
 
     public String getPanelImage2() {
         String str = "";
         char kar = '_';
-        for (int i = 0; i < panelimages2.length(); i++) {
+        for (int i = 0; i < panelimage2.length(); i++) {
             if (kar == '/' | kar == '"') {
             } else {
-                str = str + panelimages2.charAt(i);
+                str = str + panelimage2.charAt(i);
             }
-
         }
         return str;
     }
 
     public String getPanelText2() {
-        return paneltexts2;
+        return paneltext2;
     }
 
     public String getPanelButton3() {
-        return panelbuttons3;
+        return panelbutton3;
     }
 
     public String getPanelImage3() {
         String str = "";
         char kar = '_';
-        for (int i = 0; i < panelimages3.length(); i++) {
+        for (int i = 0; i < panelimage3.length(); i++) {
             if (kar == '/' | kar == '"') {
             } else {
-                str = str + panelimages3.charAt(i);
+                str = str + panelimage3.charAt(i);
             }
         }
         return str;
     }
 
     public String getPanelText3() {
-        return paneltexts3;
+        return paneltext3;
     }
 
     public String getPanelButton4() {
-        return panelbuttons4;
+        return panelbutton4;
     }
 
     public String getPanelImage4() {
         String str = "";
         char kar = '_';
-        for (int i = 0; i < panelimages4.length(); i++) {
+        for (int i = 0; i < panelimage4.length(); i++) {
             if (kar == '/' | kar == '"') {
             } else {
-                str = str + panelimages4.charAt(i);
+                str = str + panelimage4.charAt(i);
             }
-
         }
         return str;
     }
 
     public String getPanelText4() {
-        return paneltexts4;
+        return paneltext4;
     }
 
     public String getPanelButton5() {
-        return panelbuttons5;
+        return panelbutton5;
     }
 
     public String getPanelImage5() {
         String str = "";
         char kar = '_';
-        for (int i = 0; i < panelimages5.length(); i++) {
+        for (int i = 0; i < panelimage5.length(); i++) {
             if (kar == '/' | kar == '"') {
             } else {
-                str = str + panelimages5.charAt(i);
+                str = str + panelimage5.charAt(i);
             }
-
         }
         return str;
     }
 
     public String getPanelText5() {
-        return paneltexts5;
+        return paneltext5;
     }
 
     public String getPanelButton6() {
-        return panelbuttons6;
+        return panelbutton6;
     }
 
     public String getPanelImage6() {
         String str = "";
         char kar = '_';
-        for (int i = 0; i < panelimages6.length(); i++) {
+        for (int i = 0; i < panelimage6.length(); i++) {
             if (kar == '/' | kar == '"') {
             } else {
-                str = str + panelimages6.charAt(i);
+                str = str + panelimage6.charAt(i);
             }
-
         }
         return str;
     }
 
     public String getPanelText6() {
-        return paneltexts6;
+        return paneltext6;
     }
 
     public String getText() {
-        return texts;
+        return text;
     }
 
     public String getImage() {
         String str = null;
         char kar = '_';
-        for (int i = 0; i < images.length(); i++) {
+        for (int i = 0; i < image.length(); i++) {
             if (kar == '/' | kar == '"') {
             } else {
-                str = str + images.charAt(i);
+                str = str + image.charAt(i);
             }
-
         }
         return str;
     }
 
     public String getQuestions() {
-        return questions;
+        return question;
     }
 }

@@ -6,22 +6,18 @@ import javax.microedition.midlet.*;
 public class Midlet extends MIDlet {
 
     Display d;
-    fourLaws fourL;
+    fourLawsCanvas fourL;
     Splash mysplashscreen = new Splash(this);
     menu myMenu;
-    public static final boolean DEBUG = false;
-    public static final int WHITE = 0xFFFFFF;
-    public static final int BLACK = 0x000000;
-    public static final int BLUE = 0x0000FF;
-    public static final int LIGHT_GRAY = 0xAAAAAA;
-    public static final int DARK_GRAY = 0x555555;
-
+    public static operations myOperations = new operations();
+    public static fourLawsCanvas myContentCanvas = new fourLawsCanvas();
+   
     public Midlet() {
     }
 
     public void startApp() {
 
-        fourL = new fourLaws(this);
+        fourL = new fourLawsCanvas();
         fourL.repaint();
 
         myMenu = new menu(this);

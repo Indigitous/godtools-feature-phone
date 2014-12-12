@@ -66,36 +66,39 @@ public final class fourLaws extends Canvas {
     }
 
     protected void paint(Graphics g) {
-        int iViewH = this.getHeight();
-        int iViewW = this.getWidth();
-        int x = iViewW / 2;
-        int y = iViewH / 2;
+        //        int iViewH = this.getHeight();
+        //        int iViewW = this.getWidth();
+        //        int x = iViewW / 2;
+        //        int y = iViewH / 2;
+        //
+        //        if (background2 == null) {
+        //            try {
+        //                background2 = Image.createImage("/image/background2.jpg");
+        //                background2 = Actions.CreateScaledImage(background2, iViewW, iViewH);
+        //            } catch (IOException ex) {
+        //                ex.printStackTrace();
+        //            }
+        //        }
+        //
+        //        // draw background
+        //        if (background2 != null) {
+        //            g.drawImage(background2, iViewW / 2, iViewH / 2, Graphics.VCENTER | Graphics.HCENTER);
+        //        }
 
-        if (background2 == null) {
-            try {
-                background2 = Image.createImage("/image/background2.jpg");
-                background2 = Actions.CreateScaledImage(background2, iViewW, iViewH);
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
-        }
-
-        // draw background
-        if (background2 != null) {
-            g.drawImage(background2, iViewW / 2, iViewH / 2, Graphics.VCENTER | Graphics.HCENTER);
-        }
-
-
+       
         g.setFont(fontLarge);
 
-        g.drawImage(background2, 0, 0, Graphics.LEFT | Graphics.TOP);
-
+        //g.drawImage(background2, 0, 0, Graphics.LEFT | Graphics.TOP);
+        g.setColor(200, 255, 0);
+        g.fillRect(0, 0, this.getWidth(),this.getHeight());
         if (pages == 1) {
-
+            g.setColor(200, 255, 0);
+            g.fillRect(0, 0, this.getWidth(),this.getHeight());
+            
             LineEnumeration e = new LineEnumeration(fontLarge, " " + mypar.getHeading(), getWidth());
             e.writeTo(g, 12, titleHight, fontLarge);
             //g.setFont(fontMedium);
-            LineEnumeration e1 = new LineEnumeration(fontLarge, "            " + mypar.getSubHeading(), getWidth());
+            LineEnumeration e1 = new LineEnumeration(fontLarge, " " + mypar.getSubHeading(), getWidth());
 
             e1.writeTo(g, 12, subtitleHight, fontLarge);
 
@@ -111,7 +114,6 @@ public final class fourLaws extends Canvas {
 
             LineEnumeration e = new LineEnumeration(fontLarge, " " + mypar2.getNumber(), getWidth());
             e.writeTo(g, 0, titleHight, fontLarge);
-
 
             e = new LineEnumeration(fontLarge, ". " + mypar2.getHeading(), getWidth());
 

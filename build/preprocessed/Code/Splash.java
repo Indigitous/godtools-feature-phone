@@ -8,12 +8,10 @@ import javax.microedition.lcdui.Image;
 public class Splash extends Canvas {
 
     Midlet main;
-
     public Splash(Midlet m) {
         main = m;
         setFullScreenMode(true);
     }
-
     protected void paint(Graphics g) {
         try {
             g.setColor(255, 255, 255);
