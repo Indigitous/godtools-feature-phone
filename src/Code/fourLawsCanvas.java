@@ -103,20 +103,20 @@ public class fourLawsCanvas extends Canvas{
           title = operations.wrap(page0.getTitle(), Font.getDefaultFont(), (int)(screenWidth*.9));
           end = operations.wrap(page0.getEnd(), Font.getDefaultFont(), getWidth()-4);
         }else if (page == 1){ // law 1 //* 2 subtitle
-          title = operations.wrap(Midlet.myOperations.readFile("law1", 0), Font.getDefaultFont(), (int)(screenWidth*.9));
-          subTitle_1 = operations.wrap(Midlet.myOperations.readFile("law1", 1), Font.getDefaultFont(), getWidth()-4);
-          content_1 = operations.wrap(Midlet.myOperations.readFile("law1", 2), Font.getDefaultFont(), getWidth()-4);
-          subTitle_2 = operations.wrap(Midlet.myOperations.readFile("law1", 3), Font.getDefaultFont(), getWidth()-4);
-          content_2 = operations.wrap(Midlet.myOperations.readFile("law1", 4), Font.getDefaultFont(), getWidth()-4);
-          end = operations.wrap(Midlet.myOperations.readFile("law1", 5), Font.getDefaultFont(), getWidth()-4);
+          title = operations.wrap(page1.getTitle(), Font.getDefaultFont(), (int)(screenWidth*.9));
+          subTitle_1 = operations.wrap(page1.getSubTitle1(), Font.getDefaultFont(), getWidth()-4);
+          content_1 = operations.wrap(page1.getContent1(), Font.getDefaultFont(), getWidth()-4);
+          subTitle_2 = operations.wrap(page1.getSubTitle2(), Font.getDefaultFont(), getWidth()-4);
+          content_2 = operations.wrap(page1.getContent2(), Font.getDefaultFont(), getWidth()-4);
+          end = operations.wrap(page1.getEnd(), Font.getDefaultFont(), getWidth()-4);
         }else if (page == 2){ // law 2 //* 2 subtitle 1 image
-           title = operations.wrap(Midlet.myOperations.readFile("abt", 0), Font.getDefaultFont(), (int)(screenWidth*.9));
-          subTitle_1 = operations.wrap(Midlet.myOperations.readFile("abt", 0), Font.getDefaultFont(), getWidth()-4);
-          content_1 = operations.wrap(Midlet.myOperations.readFile("abt", 0), Font.getDefaultFont(), getWidth()-4);
-          subTitle_2 = operations.wrap(Midlet.myOperations.readFile("abt", 0), Font.getDefaultFont(), getWidth()-4);
+           title = operations.wrap(page2.getTitle(), Font.getDefaultFont(), (int)(screenWidth*.9));
+          subTitle_1 = operations.wrap(page2.getSubTitle1(), Font.getDefaultFont(), getWidth()-4);
+          content_1 = operations.wrap(page2.getContent1(), Font.getDefaultFont(), getWidth()-4);
+          subTitle_2 = operations.wrap(page2.getSubTitle2(), Font.getDefaultFont(), getWidth()-4);
           image1 = LoadImage("/img/fourlaws/sin.png");
-          content_2 = operations.wrap(Midlet.myOperations.readFile("abt", 0), Font.getDefaultFont(), getWidth()-4);
-          end = operations.wrap(Midlet.myOperations.readFile("abt", 1), Font.getDefaultFont(), getWidth()-4);
+          content_2 = operations.wrap(page2.getContent2(), Font.getDefaultFont(), getWidth()-4);
+          end = operations.wrap(page2.getEnd(), Font.getDefaultFont(), getWidth()-4);
 
         }else if (page == 3){ // law 3 //* 3 subtitle 1 image
           title = operations.wrap(Midlet.myOperations.readFile("abt", 0), Font.getDefaultFont(), (int)(screenWidth*.9));
