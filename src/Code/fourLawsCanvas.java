@@ -60,7 +60,19 @@ public class fourLawsCanvas extends Canvas{
     int pos_end;
     int pos_image1;
     int pos_image2;
-
+    
+    
+    Page page0 = Midlet.myOperations.setPageContent(0);
+    Page page1 = Midlet.myOperations.setPageContent(1);
+    Page page2 = Midlet.myOperations.setPageContent(2);
+    Page page3 = Midlet.myOperations.setPageContent(3);
+    Page page4 = Midlet.myOperations.setPageContent(4);
+    Page page5 = Midlet.myOperations.setPageContent(5);
+    Page page6 = Midlet.myOperations.setPageContent(6);
+    Page page7 = Midlet.myOperations.setPageContent(7);
+    Page page8 = Midlet.myOperations.setPageContent(8);
+    Page page9 = Midlet.myOperations.setPageContent(9);
+    Page page10 = Midlet.myOperations.setPageContent(10);
    
     //=======================
     public fourLawsCanvas() {
@@ -88,8 +100,8 @@ public class fourLawsCanvas extends Canvas{
 
     private void LoadForLawsPageResources(int page){
         if (page == 0){ // home // 
-          title = operations.wrap(Midlet.myOperations.readFile("abt", 0), Font.getDefaultFont(), (int)(screenWidth*.9));
-          end = operations.wrap(Midlet.myOperations.readFile("abt", 1), Font.getDefaultFont(), getWidth()-4);
+          title = operations.wrap(page0.getTitle(), Font.getDefaultFont(), (int)(screenWidth*.9));
+          end = operations.wrap(page0.getEnd(), Font.getDefaultFont(), getWidth()-4);
         }else if (page == 1){ // law 1 //* 2 subtitle
           title = operations.wrap(Midlet.myOperations.readFile("law1", 0), Font.getDefaultFont(), (int)(screenWidth*.9));
           subTitle_1 = operations.wrap(Midlet.myOperations.readFile("law1", 1), Font.getDefaultFont(), getWidth()-4);
