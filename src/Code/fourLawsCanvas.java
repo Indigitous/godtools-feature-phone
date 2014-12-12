@@ -4,7 +4,6 @@ package Code;
 import java.io.IOException;
 import java.util.Vector;
 import javax.microedition.lcdui.Canvas;
-import javax.microedition.lcdui.Display;
 import javax.microedition.lcdui.Font;
 import javax.microedition.lcdui.Graphics;
 import javax.microedition.lcdui.Image;
@@ -12,7 +11,6 @@ import javax.microedition.lcdui.Image;
 
 public class fourLawsCanvas extends Canvas{
 
-   
     int place_Y = 0; // for scroll
     int place_below_y = 0;
 
