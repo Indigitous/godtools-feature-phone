@@ -163,12 +163,9 @@ public class operations {
         //English
         Page page = new Page();
         if (id == 0) {
-           page.fromJSON("/Assets/fourLaws/am/page1.json");
-           //Page Zero
-           //page.setTitle("Have you heard of the four spiritual laws?");
-           // page.setEnd("Just as there are physical laws that govern the physical universe, so are there spiritual laws that govern your relationship with God.");
+           page.fromJSON(readJson("/Assets/fourLaws/en/page1.json"));
         } else if (id == 1) {
-           page.fromJSON("/Assets/fourLaws/am/page2.json");
+            page.fromJSON(readJson("/Assets/fourLaws/en/page2.json"));
             //page One
 //            page.setTitle("GOD LOVES YOU AND OFFERS A WONDERFUL PLAN FOR YOUR LIFE");
 //            page.setSubTitle1("God's Love");
@@ -178,7 +175,7 @@ public class operations {
 //            page.setEnd("Why is it that most people are not experiencing the abundant life?  Because...");
         } else if (id == 2) {
             //Page Two
-              page.fromJSON("/Assets/fourLaws/am/page3.json");
+              page.fromJSON(readJson("/Assets/fourLaws/en/page3.json"));
             //            page.setTitle("MAN IS SINFUL AND SEPARATED FROM GOD.  THEREFORE, HE CANNOT KNOW AND EXPERIENCE GOD'S LOVE AND PLAN FOR HIS LIFE.");
 //            page.setSubTitle1("Man Is Sinful");
 //            page.setContent1("All have sinned and fall short of the glory of God.\"  (Romans 3:23)     Man was created to have fellowship with God; but, because of his own stubborn self-will, he chose to go his own independent way and fellowship with God was broken.  This self-will, characterized by an attitude of active rebellion or passive indifference, is an evidence of what the Bible calls sin.");
@@ -188,7 +185,7 @@ public class operations {
 //            page.setEnd("The third principle explains the only way to bridge this gulf...");
         } else if (id == 3) {
             //Page three
-              page.fromJSON("/Assets/fourLaws/am/page3.json");
+              page.fromJSON(readJson("/Assets/fourLaws/en/page3.json"));
 //            page.setTitle("JESUS CHRIST IS GOD'S ONLY PROVISION FOR OUR SIN. THROUGH HIM ALONE WE CAN KNOW GOD PERSONALLY AND EXPERIENCE GOD'S LOVE AND PLAN.");
 //            page.setSubTitle1("He Died in Our Place");
 //            page.setContent1("God demonstrates His own love for us, in that while we were yet sinners, Christ died for us.\" (1 Corinthians 15:3-6)");
@@ -200,7 +197,7 @@ public class operations {
 //            page.setEnd("It is not enough just to know these three laws...");
         } else if (id == 4) {
             //Page Four
-              page.fromJSON("/Assets/fourLaws/am/page4.json");
+              page.fromJSON(readJson("/Assets/fourLaws/en/page4.json"));
 //            page.setTitle("WE MUST INDIVIDUALLY RECEIVE JESUS CHRIST AS SAVIOR AND LORD; THEN WE CAN KNOW AND EXPERIENCE GOD'S LOVE AND PLAN FOR OUR LIVES.");
 //            page.setSubTitle1("We Must Receive Christ");
 //            page.setContent1("As many as received Him, to them He gave the right to become children of God, even to those who believe in His name (John 1:12)");

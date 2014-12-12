@@ -184,26 +184,26 @@ public class Page {
                 if(json.has("Title")){
                 setTitle(json.getString("Title"));
                 }
-                if(json.has("SubContent1")){
-                setSubTitle1(json.getString("SubContent1"));
+                if(json.has("SubTitle1")){
+                setSubTitle1(json.getString("SubTitle1"));
                 }
-                if(json.has("SubContent2")){
-                setSubTitle2(json.getString("SubContent2"));
+                if(json.has("SubTitle2")){
+                setSubTitle2(json.getString("SubTitle2"));
                 }
-                if(json.has("SubContent3")){
-                setSubTitle3(json.getString("SubContent3"));
+                if(json.has("SubTitle3")){
+                setSubTitle3(json.getString("SubTitle3"));
                 }
-                if(json.has("SubContent4")){
-                setSubTitle4(json.getString("SubContent4"));
+                if(json.has("SubTitle4")){
+                setSubTitle4(json.getString("SubTitle4"));
                 }
-                if(json.has("SubContent5")){
-                setSubTitle5(json.getString("SubContent5"));
+                if(json.has("SubTitle5")){
+                setSubTitle5(json.getString("SubTitle5"));
                 }
-                if(json.has("SubContent6")){
-                setSubTitle6(json.getString("SubContent6"));
+                if(json.has("SubTitle6")){
+                setSubTitle6(json.getString("SubTitle6"));
                 }
-                if(json.has("SubContent7")){
-                setSubTitle7(json.getString("SubContent7"));
+                if(json.has("SubTitle7")){
+                setSubTitle7(json.getString("SubTitle7"));
                 }
                 //
                 if(json.has("Content1")){
