@@ -1,8 +1,0 @@
-{
-	"title":"GOD LOVES YOU AND OFFERS A WONDERFUL PLAN FOR YOUR LIFE",
-	"subTitle1":"God's Love",
-	"content1":"For God so loved the world that He gave His one and only Son, that whoever believes in Him shall not perish but have eternal life. (John 3:16, NIV)",
-	"subTitle2":"God's Plan",
-	"content2":"[Christ speaking] \"I came that they might have life, and might have it abundantly\" [that it might be full and meaningful]. (John 10:10)",
-	"end":"Why is it that most people are not experiencing the abundant life?  Because..."
-}

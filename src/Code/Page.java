@@ -3,12 +3,15 @@
  * and open the template in the editor.
  */
 package Code;
+
+import org.json.me.JSONException;
+import org.json.me.JSONObject;
+
 /**
  *
  * @author Overcomer
  */
 public class Page {
-
     private String title;
     private String subTitle1;
     private String subTitle2;
@@ -25,8 +28,6 @@ public class Page {
     private String content6;
     private String content7;
     private String end;
-    private String image1;
-    private String image2;
 
     public Page() {
         this.title = null;
@@ -45,11 +46,8 @@ public class Page {
         this.content6 = null;
         this.content7 = null;
         this.end = null;
-        this.image1 = null;
-        this.image2 = null;
     }
-    
-    
+
     public String getTitle() {
         return title;
     }
@@ -114,21 +112,13 @@ public class Page {
         return end;
     }
 
-    public String getImage1() {
-        return image1;
-    }
-
-    public String getImage2() {
-        return image2;
-    }
-
     //Setters
     public void setTitle(String value) {
         title = value;
     }
 
     public void setSubTitle1(String value) {
-        subTitle1 = value;;
+        subTitle1 = value;
     }
 
     public void setSubTitle2(String value) {
@@ -145,7 +135,6 @@ public class Page {
 
     public void setSubTitle5(String value) {
         subTitle5 = value;
-        ;
     }
 
     public void setSubTitle6(String value) {
@@ -188,11 +177,62 @@ public class Page {
         end = value;
     }
 
-    public void setImage1(String value) {
-        image1 = value;
-    }
-
-    public void setImage2(String value) {
-        image2 = value;
-    }
+    public void fromJSON(String jsonString) {
+            JSONObject json;
+            try {
+                json = new JSONObject(jsonString);
+                if(json.has("Title")){
+                setTitle(json.getString("Title"));
+                }
+                if(json.has("SubContent1")){
+                setSubTitle1(json.getString("SubContent1"));
+                }
+                if(json.has("SubContent2")){
+                setSubTitle2(json.getString("SubContent2"));
+                }
+                if(json.has("SubContent3")){
+                setSubTitle3(json.getString("SubContent3"));
+                }
+                if(json.has("SubContent4")){
+                setSubTitle4(json.getString("SubContent4"));
+                }
+                if(json.has("SubContent5")){
+                setSubTitle5(json.getString("SubContent5"));
+                }
+                if(json.has("SubContent6")){
+                setSubTitle6(json.getString("SubContent6"));
+                }
+                if(json.has("SubContent7")){
+                setSubTitle7(json.getString("SubContent7"));
+                }
+                //
+                if(json.has("Content1")){
+                setContent1(json.getString("Content1"));
+                }
+                if(json.has("Content2")){
+                setContent2(json.getString("Content2"));
+                }
+                if(json.has("Content3")){
+                setContent3(json.getString("Content3"));
+                }
+                if(json.has("Content4")){
+                setContent4(json.getString("Content4"));
+                }
+                if(json.has("Content5")){
+                setContent5(json.getString("Content5"));
+                }
+                if(json.has("Content6")){
+                setContent6(json.getString("Content6"));
+                }
+                if(json.has("Content7")){
+                setContent6(json.getString("Content7"));
+                }
+                if(json.has("End")){
+                setEnd(json.getString("End"));
+                }
+                
+            } catch (JSONException ex) {
+                ex.printStackTrace();
+            }
+        } 
 }
