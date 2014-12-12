@@ -28,9 +28,9 @@ public class menu extends Canvas {
         if (back == null && choose == null) {
             try {
                 back = Image.createImage("/image/menuback.jpg");
-                back = Actions.CreateScaledImage(back, iViewW, iViewH);
+                back = operations.CreateScaledImage(back, iViewW, iViewH);
                 choose = Image.createImage("/image/selector.png");
-                choose = Actions.CreateScaledImage(choose, 168, iViewH / 9);
+                choose = operations.CreateScaledImage(choose, 168, iViewH / 9);
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
