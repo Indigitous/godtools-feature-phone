@@ -1,3 +1,4 @@
+
 package Code;
 
 import java.io.IOException;
@@ -6,98 +7,72 @@ import javax.microedition.lcdui.Display;
 import javax.microedition.lcdui.Graphics;
 import javax.microedition.lcdui.Image;
 
-public class menu extends Canvas {
 
-    Midlet main;
-    Image back;
-    Image choose;
-    int mychoice = 0;
+public class menu extends Canvas{
 
-    public menu(Midlet m) {
-        main = m;
+    int screenWidth;
+    int screenHeight;
+
+    int selectionPlace = 0;// 0,1,2,3
+    int smallestSize = 0;
+
+
+    Image godToolsLogo; // top logo
+
+    Image knowingGodImg;
+    Image satisfaiedImg;
+    Image fourLawsImg;
+    Image everyStudentImg;
+
+    public menu() {
         setFullScreenMode(true);
+
+        screenWidth = getWidth();
+        screenHeight = getHeight();
+
+        if((int)(screenHeight*0.8) > screenWidth){
+            smallestSize = (int)(screenWidth*0.5);
+        }else{
+            smallestSize = (int)(screenHeight*0.4);
+        }
+
+        try {
+            godToolsLogo = Image.createImage("images/icon.png");
+            godToolsLogo = mainMidlet.myOperations.rescaleImage(godToolsLogo, (int)(screenHeight*.20), (int)(screenHeight*.20));
+
+            knowingGodImg = Image.createImage("images/knowingGod_icon.png");
+            satisfaiedImg = Image.createImage("images/satisfied_icon.png");
+            fourLawsImg = Image.createImage("images/fourLaws_icon.png");
+            everyStudentImg = Image.createImage("images/everyStudent_icon.png");
+
+           knowingGodImg = mainMidlet.myOperations.rescaleImage(knowingGodImg, smallestSize, smallestSize);
+           satisfaiedImg = mainMidlet.myOperations.rescaleImage(satisfaiedImg, smallestSize, smallestSize);
+           fourLawsImg = mainMidlet.myOperations.rescaleImage(fourLawsImg, smallestSize, smallestSize);
+           everyStudentImg = mainMidlet.myOperations.rescaleImage(everyStudentImg, smallestSize, smallestSize);
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+
     }
 
     protected void paint(Graphics g) {
-        int iViewH = this.getHeight();
-        int iViewW = this.getWidth();
-        int x = iViewW / 2;
-        int y = iViewH / 2;
+        g.setColor(52,32,32);
+        g.fillRect(0, 0, screenWidth, screenHeight);
 
-        // load the background image
-        if (back == null && choose == null) {
-            try {
-                back = Image.createImage("/image/menuback.jpg");
-                back = operations.CreateScaledImage(back, iViewW, iViewH);
-                choose = Image.createImage("/image/selector.png");
-                choose = operations.CreateScaledImage(choose, 168, iViewH / 9);
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
-        }
+        g.drawImage(godToolsLogo, screenWidth/2, (screenHeight-smallestSize*2-godToolsLogo.getHeight())/2, g.TOP|g.HCENTER);
 
-        // draw background
-        if (back != null) {
-            g.drawImage(back, x, y, Graphics.VCENTER | Graphics.HCENTER);
-            //g.drawImage(choose, x+15, y+84, g.LEFT|g.TOP);
-        }
-        //.drawImage (back, x, y, Graphics.TOP|Graphics.LEFT);
-        if (choose != null) {
-            if (mychoice == 0) {//83
-                g.drawImage(choose, iViewW / 4, iViewH / 4 + 6, Graphics.TOP | Graphics.LEFT);
-            } else if (mychoice == 1) {
-                g.drawImage(choose, iViewW / 4, iViewW / 2, Graphics.TOP | Graphics.LEFT);
-            } else if (mychoice == 2) {
-                g.drawImage(choose, iViewW / 4, iViewH / 2, Graphics.TOP | Graphics.LEFT);
-            } else if (mychoice == 3) {
-                g.drawImage(choose, iViewW / 4, iViewW / 2 + iViewH / 4, Graphics.TOP | Graphics.LEFT);
-            }
-            /* else if (mychoice == 4){
-             g.drawImage(choose, iViewW/4,iViewW, Graphics.TOP|Graphics.LEFT);
-             }*/
-        }
-        //g.drawImage(back, 0, 0, Graphics.LEFT|Graphics.TOP);
+         g.drawImage(knowingGodImg,screenWidth/2-smallestSize,screenHeight-smallestSize*2,g.LEFT|g.TOP);
+         g.drawImage(satisfaiedImg,(int)(screenWidth*0.5),screenHeight-smallestSize*2,g.LEFT|g.TOP);
+         g.drawImage(fourLawsImg,screenWidth/2-smallestSize,screenHeight-smallestSize,g.LEFT|g.TOP);
+         g.drawImage(everyStudentImg,(int)(screenWidth*0.5),screenHeight-smallestSize,g.LEFT|g.TOP);
     }
 
     protected void keyPressed(int keyCode) {
         super.keyPressed(keyCode);
-
-        if (getGameAction(keyCode) == DOWN && mychoice == 0) {
-            mychoice = 1;
-        } else if (getGameAction(keyCode) == UP && mychoice == 1) {
-            mychoice = 0;
-        } else if (getGameAction(keyCode) == DOWN && mychoice == 1) {
-            mychoice = 2;
-        } else if (getGameAction(keyCode) == UP && mychoice == 2) {
-            mychoice = 1;
-        } else if (getGameAction(keyCode) == DOWN && mychoice == 2) {
-            mychoice = 3;
-        } else if (getGameAction(keyCode) == UP && mychoice == 3) {
-            mychoice = 2;
-        }
-        /*else if(getGameAction(keyCode) == DOWN && mychoice == 3){
-         mychoice = 4;
-         }else if(getGameAction(keyCode) == UP && mychoice == 4){
-         mychoice = 3;
-         */
-        if (getGameAction(keyCode) == FIRE) {
-            if (mychoice == 0) {
-                // Display.getDisplay(main).setCurrent(main.knowingGodPersonaly);
-            } else if (mychoice == 1) {
-                Display.getDisplay(main).setCurrent(main.fourL);
-            } else if (mychoice == 2) {
-                // Display.getDisplay(main).setCurrent(main.satisfiedbyG);
-            } else if (mychoice == 3) {
-                // Display.getDisplay(main).setCurrent(main.eStudent);
-            }
-            /*else if (mychoice == 4){
-             Display.getDisplay(main).setCurrent(main.coonectingG);
-             }*/
-
-        } else if (keyCode == -6) {
-            main.notifyDestroyed();
-
-        }
-        repaint();
     }
+
+
+
+
 }

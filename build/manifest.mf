@@ -1,4 +1,4 @@
-MIDlet-1: Midlet,/image/Icon.jpg,Code.Midlet
+MIDlet-1: mainMidlet,/images/icon.png,Code.mainMidlet
 MIDlet-Vendor: Vendor
 MIDlet-Name: Godtools
 MIDlet-Version: 1.0
