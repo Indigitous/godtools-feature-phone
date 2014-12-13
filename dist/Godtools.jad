@@ -1,5 +1,5 @@
-MIDlet-1: mainMidlet,/images/icon.png,Code.mainMidlet
-MIDlet-Jar-Size: 136997
+MIDlet-1: mainMIDlet,/images/icon.png,code.mainMIDlet
+MIDlet-Jar-Size: 99951
 MIDlet-Jar-URL: Godtools.jar
 MIDlet-Name: Godtools
 MIDlet-Vendor: Vendor

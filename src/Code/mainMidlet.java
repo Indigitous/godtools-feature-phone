@@ -1,23 +1,24 @@
-package Code;
+package code;
 
 import javax.microedition.lcdui.Display;
 import javax.microedition.midlet.*;
 
-public class mainMidlet extends MIDlet {
+public class mainMIDlet extends MIDlet{
 
-    public static mainMidlet m;
-    public Splash mysplash = new Splash();
+    public static mainMIDlet m;
+    public splash mysplash = new splash();
     public static operations myOperations = new operations();
     public static menu myMenu = new menu();
     public static fourLawsCanvas myFourLawsCanvas = new fourLawsCanvas();
 
-    public mainMidlet() {
-        m = this;
-        Display.getDisplay(this).setCurrent(mysplash);
-        mysplash.backToGodTools();
+    public mainMIDlet() {
+    m = this;
+    Display.getDisplay(this).setCurrent(mysplash);
+    mysplash.backToGodTools();
     }
 
     public void startApp() {
+
     }
 
     public void pauseApp() {
@@ -25,4 +26,6 @@ public class mainMidlet extends MIDlet {
 
     public void destroyApp(boolean unconditional) {
     }
+
+
 }

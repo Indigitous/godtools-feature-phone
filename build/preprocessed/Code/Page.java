@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package Code;
+package code;
 
 import org.json.me.JSONException;
 import org.json.me.JSONObject;
@@ -20,6 +20,7 @@ public class Page {
     private String subTitle5;
     private String subTitle6;
     private String subTitle7;
+    private String subTitle8;
     private String content1;
     private String content2;
     private String content3;
@@ -27,6 +28,7 @@ public class Page {
     private String content5;
     private String content6;
     private String content7;
+    private String content8;
     private String end;
 
     public Page() {
@@ -38,6 +40,7 @@ public class Page {
         this.subTitle5 = null;
         this.subTitle6 = null;
         this.subTitle7 = null;
+        this.subTitle8 = null;
         this.content1 = null;
         this.content2 = null;
         this.content3 = null;
@@ -45,6 +48,7 @@ public class Page {
         this.content5 = null;
         this.content6 = null;
         this.content7 = null;
+        this.content8 = null;
         this.end = null;
     }
 
@@ -80,6 +84,10 @@ public class Page {
         return subTitle7;
     }
 
+     public String getSubTitle8() {
+        return subTitle8;
+    }
+
     public String getContent1() {
         return content1;
     }
@@ -106,6 +114,10 @@ public class Page {
 
     public String getContent7() {
         return content7;
+    }
+
+    public String getContent8() {
+        return content8;
     }
 
     public String getEnd() {
@@ -145,6 +157,10 @@ public class Page {
         subTitle7 = value;
     }
 
+    public void setSubTitle8(String value) {
+        subTitle8 = value;
+    }
+
     public void setContent1(String value) {
         content1 = value;
     }
@@ -171,6 +187,10 @@ public class Page {
 
     public void setContent7(String value) {
         content7 = value;
+    }
+
+    public void setContent8(String value) {
+        content8 = value;
     }
 
     public void setEnd(String value) {
@@ -205,6 +225,9 @@ public class Page {
                 if(json.has("SubTitle7")){
                 setSubTitle7(json.getString("SubTitle7"));
                 }
+                if(json.has("SubTitle8")){
+                setSubTitle8(json.getString("SubTitle8"));
+                }
                 //
                 if(json.has("Content1")){
                 setContent1(json.getString("Content1"));
@@ -225,7 +248,10 @@ public class Page {
                 setContent6(json.getString("Content6"));
                 }
                 if(json.has("Content7")){
-                setContent6(json.getString("Content7"));
+                setContent7(json.getString("Content7"));
+                }
+                if(json.has("Content8")){
+                setContent8(json.getString("Content8"));
                 }
                 if(json.has("End")){
                 setEnd(json.getString("End"));

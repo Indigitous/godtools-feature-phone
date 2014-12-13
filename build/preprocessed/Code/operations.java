@@ -1,4 +1,5 @@
-package Code;
+package code;
+
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -198,6 +199,8 @@ public class operations {
             page.fromJSON(readJson("/Assets/fourLaws/en/page9.json"));
         }else if (id == 9) {
             page.fromJSON(readJson("/Assets/fourLaws/en/page10.json"));
+        }else if (id == 10) {
+            page.fromJSON(readJson("/Assets/fourLaws/en/page11.json"));
         }
 
         return page;
@@ -227,4 +230,5 @@ public class operations {
         return imgNewImage;
     }
 }
-    
+
+
